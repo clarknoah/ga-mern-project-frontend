@@ -1,0 +1,144 @@
+
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+
+  border: none;
+  background: #FFFFFF;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+
+
+select {
+  flex: 1;
+  padding: 0 5px;
+  color: black;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #F6F7F8;
+  border-radius: 2px;
+}
+
+.select-small {
+  height: 25px;
+}
+.select-medium {
+  height:30px;
+}
+.select-large {
+  height: 35px;
+}
+/* Arrow */
+.select-arrow{
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #F6F7F8;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  border-left:none;
+  border-top-left-radius: none;
+  border-top-right-radius: none;
+  transform: translateX(-5px);
+  padding: 5px;
+}
+
+.select-background{
+  background-color:#F6F7F8;
+}
+
+.select-arrow-small{
+  height: 25px;
+}
+
+.select-arrow-medium{
+  height: 30px
+}
+.select-arrow-large{
+  height: 35px
+}
+
+.select-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border: none;
+  position: relative;
+  display: flex;
+  height: 3em;
+  line-height: 3;
+  overflow: hidden;
+}
+
+.select-container-small {
+  width:10em;
+
+}
+
+.select-container-medium {
+  width:12em;
+}
+
+.select-container-large {
+width:12em;
+}
+
+
+.input-label {
+ font-family: arial;
+ padding: 5px 0;
+}
+
+/* 
+.input-small {
+  padding: 0 10px;
+  height: 24px;
+  border-radius: 5px;
+  border: 1px solid #F6F7F8;
+
+
+}
+
+.input-small::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+.input-medium {
+  padding: 0 10px;
+  height: 36px;
+  border-radius: 5px;
+  border: 1px solid #F6F7F8;
+
+}
+
+.input-medium::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+
+.input-large {
+  padding: 0 10px;
+  height: 44px;
+  border-radius: 5px;
+  border: 1px solid #F6F7F8;
+
+}
+
+.input-large::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+} */

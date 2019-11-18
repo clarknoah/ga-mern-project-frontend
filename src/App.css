@@ -18,11 +18,11 @@ body {
 }
 
 header{
-  background-color: black;
+  background-color: rgba(101, 119, 134);
   font-family: arial;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   height: 50px;
   color: white;
@@ -32,7 +32,7 @@ header{
 
 
 footer {
-  background-color: black;
+  background-color: rgba(101, 119, 134);
   font-family: arial;
   display: flex;
   flex-direction: row;
@@ -41,4 +41,8 @@ footer {
   color: white;
   padding: 25px;
 
+}
+
+.Linker {
+  cursor: pointer
 }

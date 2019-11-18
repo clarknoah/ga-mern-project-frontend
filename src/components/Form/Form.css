@@ -1,0 +1,145 @@
+input {
+  border-radius: 5px;
+  border: 1px solid #F6F7F8;
+}
+
+
+
+.checkbox {
+  height: 20px;
+  width: 20px;
+  border-radius: 2px;
+  border: 1px black solid;
+  transition: all 0.5s ease;
+}
+
+.checkbox-blue {
+  border: 2px #33A0FF solid;
+}
+
+.checkbox-black {
+  border: 2px #000000 solid;
+
+}
+.checkbox-blue-checked {
+  background-color: #33A0FF;
+}
+
+.checkbox-black-checked {
+  background-color: #000000;
+}
+
+
+.number-input{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #F6F7F8;
+  font-family: arial;
+  width: 8em;
+  padding: 1em 0;
+  border-radius: 5px;
+}
+.nothing{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.scale{
+  transform: scale(1.1);
+}
+
+.input-with-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.input-with-button-button {
+  background-color:#33A0FF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: inherit;
+  cursor:pointer;
+  border: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  transform: translateX(-6px);
+  font-size: 0.5em;
+}
+
+.input-button-medium {
+  height: 24px;
+}
+
+.input-button-small {
+  height: 24px;
+}
+
+.input-button-large {
+
+}
+
+.button-text{
+  padding: 0.5em 1em;
+  color:white;
+  font-family: arial;
+}
+
+
+
+.input-label {
+ font-family: arial;
+ padding: 5px 0;
+}
+
+
+.input-small {
+  padding: 0 10px;
+  height: 24px;
+}
+
+.input-small::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+.input-medium {
+  padding: 0 10px;
+  height: 36px;
+
+}
+
+.input-medium::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+
+.input-large {
+  padding: 0 10px;
+  height: 44px;
+}
+
+.input-large::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+
+
+
+
+
+/* Transition */
