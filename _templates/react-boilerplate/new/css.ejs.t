@@ -1,3 +1,6 @@
+---
+to: src/App.css
+---
 * {
   box-sizing: border-box;
 }
