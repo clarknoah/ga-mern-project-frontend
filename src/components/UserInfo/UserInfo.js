@@ -8,7 +8,9 @@ const UserInfo = (props) => {
 
   return(
     <div className={classList}>
-      UserInfo
+      <h3>{props.firstName} {props.lastName}</h3>
+      <h5>@{props.handle}</h5>
+      <p>{props.description}</p>
     </div>
   );
 }

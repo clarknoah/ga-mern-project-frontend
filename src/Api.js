@@ -15,7 +15,9 @@ class Api {
 
   //API to Log IN!
   loginUser=(user)=>{
-    return X.post(this.login, user);
+    console.log(user);
+    let obj = {handle:user}
+    return X.post(this.login, obj);
   }
   //asdf
   createUser=(user)=>{

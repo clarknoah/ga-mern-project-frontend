@@ -30,6 +30,11 @@ header{
 
 }
 
+main {
+  margin: 50px 20%;
+  height: 100%;
+}
+
 
 footer {
   background-color: rgba(101, 119, 134);
@@ -45,4 +50,9 @@ footer {
 
 .Linker {
   cursor: pointer
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
 }
