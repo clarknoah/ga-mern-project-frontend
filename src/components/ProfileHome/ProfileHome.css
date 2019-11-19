@@ -1,4 +1,16 @@
 
 .ProfileHome {
+  display:grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 5px;
+  height: 100%;
+}
 
+.UserInfoContainer {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.TweepStreamContainer {
+  grid-area: 2 / 2 / 3 / 3;
 }

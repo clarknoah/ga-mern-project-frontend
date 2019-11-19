@@ -2,16 +2,29 @@
 import React, {Component} from 'react';
 import "./ProfileHome.css";
 import Api from '../../Api';
+import UserInfo from '../UserInfo/UserInfo.js';
+import TweepStream from '../TweepStream/TweepStream';
+
 let api = new Api();
+
+
 class ProfileHome extends Component{
   constructor(props){
-    console.log(props);
     super(props);
-    console.log(props);
+    let user = props.location.state.data;
+    let tweeps = user.tweeps;
+    delete user.tweeps;
+
+    console.log(user);
     this.state = {
       classList: "ProfileHome",
-      handle: props.match.params.handle
+      handle:user.handle,
+      userInfo:user,
+      tweeps: tweeps
     };
+
+
+
     api.readUser(props.match.params.handle)
       .then(
         res=>{
@@ -23,6 +36,7 @@ class ProfileHome extends Component{
 
   componentDidMount(){
     console.log("ProfileHome Mounted");
+
   }
 
   componentDidUpdate(){}
@@ -32,7 +46,12 @@ class ProfileHome extends Component{
   render(){
     return(
       <div className={this.state.classList}>
-        ProfileHome
+      <div id="UserInfoContainer">
+        <UserInfo {...this.state.userInfo}/>
+      </div>
+      <div id="TweepStreamContainer">
+        <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps}/>
+      </div>
       </div>
     );
   }

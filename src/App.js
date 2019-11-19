@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1><i>Tweeper</i></h1>
+        <h1><i><Link exact={true} to="/">Tweeper</Link></i></h1>
         <Link exact={true} to="/createUser">Link</Link>
         <UserLogin/>
       </header>
@@ -27,7 +27,7 @@ function App() {
       <Route exact={true} path="/createUser" render={()=>{
         return <CreateUser/>
       }}/>
-      <Route exact path="/user/:handle" render={
+      <Route exact path="/home" render={
         (renderProps)=>{
           return <ProfileHome {...renderProps}/>
         //  return <ParkDetails {...this.state.currentPark}></ParkDetails>

@@ -1,4 +1,15 @@
 
 .UserInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: grey;
+  padding: 10px;
+}
+
+
+.UserInfo h3,h5{
+  margin:2px;
 
 }

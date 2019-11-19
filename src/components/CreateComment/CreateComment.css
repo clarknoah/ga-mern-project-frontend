@@ -1,9 +1,8 @@
 
-.ReadComment {
-  border: 1px solid green;
+.CreateComment {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 25px;
+  border: 1px solid red;
 }
