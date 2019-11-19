@@ -15,6 +15,7 @@ class ProfileHome extends Component{
     api.readUser(props.match.params.handle)
       .then(
         res=>{
+
           console.log(res);
         }
       )

@@ -26,23 +26,13 @@ class CreateUser extends Component{
 
   componentWillUnmount(){}
 
-  updateFirstName = (evt) =>{
+  updateValue = (evt) =>{
+    let name = evt.target.name;
     this.setState({
-      firstName:evt.target.value
+      [name]:evt.target.value
     })
   }
 
-  updateLastName = (evt) =>{
-    this.setState({
-      lastName:evt.target.value
-    })
-  }
-
-  updateHandle = (evt) =>{
-    this.setState({
-      handle:evt.target.value
-    })
-  }
 
   submitUser = (evt)=>{
     evt.preventDefault();
@@ -59,7 +49,7 @@ class CreateUser extends Component{
 
   }
 
-  
+
 
   render(){
     return(
@@ -68,17 +58,20 @@ class CreateUser extends Component{
         <form>
         <label>First Name</label>
         <input
-          onChange={this.updateFirstName}
+          name="firstName"
+          onChange={this.updateValue}
           value={this.state.firstName}
           placeholder="First Name"></input>
         <label>Last Name</label>
           <input
-            onChange={this.updateLastName}
+          name="lastName"
+            onChange={this.updateValue}
             value={this.state.lastName}
             placeholder="First Name"></input>
         <label>Handle</label>
           <input
-            onChange={this.updateHandle}
+            name="handle"
+            onChange={this.updateValue}
             value={this.state.handle}
             placeholder="Handle"></input>
             <button onClick={this.submitUser}>Submit User</button>
