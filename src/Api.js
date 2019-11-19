@@ -8,7 +8,7 @@ class Api {
 
   }
 
-  //Gets the user path
+  //Gets the user
   getUserPath=(id)=>{
     return `${this.userRoot}/${id}`;
   }
