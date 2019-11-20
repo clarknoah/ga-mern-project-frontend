@@ -13,8 +13,9 @@
   color: white;
   font-weight: 700;
   border: solid white 1.5px;
-  margin: 0 10px;
+  margin: 0 20px;
   transition: all ease 0.25s;
+  cursor: pointer;
 }
 .login-button:hover {
   background: white;
