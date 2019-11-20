@@ -15,7 +15,8 @@ class CreateUser extends Component{
       classList: "CreateUser",
       firstName:'',
       lastName:'',
-      handle:''
+      handle:'',
+      password:''
 
     };
   }
@@ -40,6 +41,7 @@ class CreateUser extends Component{
       firstName:this.state.firstName,
       lastName:this.state.lastName,
       handle:this.state.handle,
+      password:this.state.password
     };
 
     api.createUser(user)
@@ -55,27 +57,33 @@ class CreateUser extends Component{
     return(
       <div className={this.state.classList}>
         <h1>Create A Profile!</h1>
-        <form>
-        <label>First Name</label>
+        <form className={"UserForm"}>
+        <label>First Name
         <input
           name="firstName"
           onChange={this.updateValue}
           value={this.state.firstName}
-          placeholder="First Name"></input>
-        <label>Last Name</label>
+          placeholder="First Name"></input></label>
+        <label>Last Name
           <input
           name="lastName"
             onChange={this.updateValue}
             value={this.state.lastName}
-            placeholder="First Name"></input>
-        <label>Handle</label>
+            placeholder="First Name"></input></label>
+        <label>Handle
           <input
             name="handle"
             onChange={this.updateValue}
             value={this.state.handle}
-            placeholder="Handle"></input>
-            <button onClick={this.submitUser}>Submit User</button>
-            <button onClick={this.submitUser}>Submit User</button>
+            placeholder="Handle"></input></label>
+            <label>Password
+              <input
+                name="password"
+                type="password"
+                onChange={this.updateValue}
+                value={this.state.password}
+                placeholder="password"></input></label>
+                <button onClick={this.submitUser}>Submit User</button>
         </form>
       </div>
     );

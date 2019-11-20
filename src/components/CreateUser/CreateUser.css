@@ -2,3 +2,11 @@
 .CreateUser {
   border: 1px solid black;
 }
+
+.UserForm{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content:center;
+}
