@@ -1,4 +1,22 @@
-
-.UserLogin {
-
+/* .UserLogin {
+} */
+.login-input {
+  height: 75%;
+  padding: 8px;
+}
+.login-button {
+  border-radius: 100px;
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 10px;
+  background-color: rgba(101, 119, 134);
+  color: white;
+  font-weight: 700;
+  border: solid white 1.5px;
+  margin: 0 10px;
+  transition: all ease 0.25s;
+}
+.login-button:hover {
+  background: white;
+  color: rgba(101, 119, 134);
 }
