@@ -3,20 +3,31 @@ import React, {Component} from 'react';
 import "./ReadTweep.css";
 import ReadComment from "../ReadComment/ReadComment";
 import CreateComment from "../CreateComment/CreateComment";
-
+import Api from "../../Api";
+let api = new Api();
 class ReadTweep extends Component{
   constructor(props){
     super();
-    console.log(props);
     let tweep = props.tweep;
     let date = new Date(tweep.timestamp);
     tweep.timestamp = this.formatDate(date);
+    let comments = this.sortByDate(tweep.comments);
     this.state = {
       classList: "ReadTweep",
       tweep:props.tweep,
-      user: props.user
+      user: props.user,
+      comments:comments
     };
   }
+
+sortByDate = (arr)=>{
+  arr = arr.sort((a,b)=>{
+     a = new Date(a.timestamp);
+     b = new Date(b.timestamp);
+    return b - a;
+  })
+  return arr;
+}
 
 formatDate=(date)=>{
   var monthNames = [
@@ -33,14 +44,36 @@ formatDate=(date)=>{
   return day + ' ' + monthNames[monthIndex] + ' ' + year;
 }
 
+  commentCreated=()=>{
+    console.log("The Comment was created");
+    let handle = this.state.user.handle;
+    let tweepId = this.state.tweep._id;
+    api.readTweep(handle, tweepId)
+      .then(res=>{
+        console.log("New Comments", res);
+        let comments = this.sortByDate(res.data.comments);
+        this.setState({
+          comments:comments
+        })
+      })
+  }
+
+  updateTweep=()=>{
+
+  }
+
+
+
   componentDidMount(){}
 
-  componentDidUpdate(){}
+  componentDidUpdate(){
+    console.log("Read Tweep Updated");
+  }
 
   componentWillUnmount(){}
 
   render(){
-    let comments = this.state.tweep.comments.map(val=>{
+    let comments = this.state.comments.map(val=>{
       return <ReadComment key={val._id} data={val}/>
     })
     return(
@@ -50,7 +83,10 @@ formatDate=(date)=>{
         </div>
         <p>{this.state.tweep.tweepContent}</p>
         {comments}
-        <CreateComment />
+        <CreateComment
+          commentCreated={this.commentCreated}
+          user={this.state.user}
+          tweep={this.state.tweep} />
       </div>
     );
   }

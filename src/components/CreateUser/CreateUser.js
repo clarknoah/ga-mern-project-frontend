@@ -12,9 +12,10 @@ class CreateUser extends Component {
     console.log(props);
     this.state = {
       classList: "CreateUser",
-      firstName: "",
-      lastName: "",
-      handle: ""
+      firstName:'',
+      lastName:'',
+      handle:'',
+      password:''
     };
   }
 
@@ -34,9 +35,10 @@ class CreateUser extends Component {
   submitUser = evt => {
     evt.preventDefault();
     let user = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      handle: this.state.handle
+      firstName:this.state.firstName,
+      lastName:this.state.lastName,
+      handle:this.state.handle,
+      password:this.state.password
     };
 
     api.createUser(user).then(res => {
@@ -48,30 +50,34 @@ class CreateUser extends Component {
     return (
       <div className={this.state.classList}>
         <h1 className="create-profile-header">Create A Profile!</h1>
-        <form>
-          <label>First Name</label>
-          <input
-            name="firstName"
-            onChange={this.updateValue}
-            value={this.state.firstName}
-            placeholder="First Name"
-          ></input>
-          <label>Last Name</label>
+        <form className={"UserForm"}>
+        <label>First Name
+        <input
+          name="firstName"
+          onChange={this.updateValue}
+          value={this.state.firstName}
+          placeholder="First Name"></input></label>
+        <label>Last Name
           <input
             name="lastName"
             onChange={this.updateValue}
             value={this.state.lastName}
-            placeholder="First Name"
-          ></input>
-          <label>Handle</label>
+            placeholder="Last Name"></input></label>
+        <label>Handle
           <input
             name="handle"
             onChange={this.updateValue}
             value={this.state.handle}
             placeholder="Handle"
-          ></input>
-          <button onClick={this.submitUser}>Submit User</button>
-          <button onClick={this.submitUser}>Submit User</button>
+            placeholder="Handle"></input></label>
+            <label>Password
+              <input
+                name="password"
+                type="password"
+                onChange={this.updateValue}
+                value={this.state.password}
+                placeholder="password"></input></label>
+                <button onClick={this.submitUser}>Submit User</button>
         </form>
       </div>
     );

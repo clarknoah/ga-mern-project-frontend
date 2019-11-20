@@ -11,24 +11,42 @@ class CreateComment extends Component{
     console.log(props);
     this.state = {
       classList: "CreateComment",
-      newComment:""
+      newComment:"",
+      user:props.user,
+      tweep:props.tweep
     };
   }
 
   componentDidMount(){}
 
-  componentDidUpdate(){}
+  componentDidUpdate(){
+    console.log("Create Comment Updated");
+  }
 
   componentWillUnmount(){}
 
   updateValue=(evt)=>{
     this.setState({
-      newTweep: evt.target.value
+      newComment: evt.target.value
     })
   }
 
-  submitTweep=(evt)=>{
+  submitComment=(evt)=>{
+    let comment = {
+      commentContent: this.state.newComment,
+      timestamp: new Date()
+    }
+    let handle = this.state.user.handle;
+    let tweep = this.state.tweep._id;
     console.log("Submitting Comment");
+    api.createComment(handle,tweep, comment)
+      .then(res=>{
+        this.props.commentCreated();
+        console.log("Comment Created");
+        this.setState({
+          newComment:""
+        });
+      })
   }
 
 

@@ -5,7 +5,6 @@ import "./ReadComment.css";
 class ReadComment extends Component{
   constructor(props){
     super(props);
-    console.log(props);
     let comment = props.data;
     comment.timestamp = this.formatDate(new Date(comment.timestamp));
     this.state = {

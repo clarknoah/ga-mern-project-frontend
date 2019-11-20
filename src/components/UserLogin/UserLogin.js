@@ -11,7 +11,8 @@ class UserLogin extends Component {
     this.state = {
       classList: "UserLogin",
       handle: "",
-      loggedIn: false
+      loggedIn: false,
+      password:""
     };
   }
 
@@ -21,20 +22,29 @@ class UserLogin extends Component {
 
   componentWillUnmount() {}
 
-  updateHandle = evt => {
+  updateValue = evt => {
+    let name = evt.target.name;
     this.setState({
-      handle: evt.target.value
+      [name]: evt.target.value
     });
   };
 
   login = () => {
-    api.loginUser(this.state.handle).then(res => {
-      console.log(res.data[0]);
-      this.goToProfile(res.data[0]);
-      this.setState({
-        loggedIn: true
-      });
-    });
+    api.loginUser(this.state.handle,this.state.password)
+    .then(res => {
+      if(res.data[0]!==undefined){
+        console.log(res.data[0]);
+        this.goToProfile(res.data[0]);
+        this.setState({
+          loggedIn: true
+        });
+      }else{
+        alert("Bad data");
+      }
+    })
+    .catch(err=>{
+      console.log("Something went wrong");
+    })
   };
 
   logout = () => {
@@ -63,9 +73,18 @@ class UserLogin extends Component {
     let notLoggedIn = (
       <div>
         <input
-          onChange={this.updateHandle}
+          name="handle"
+          onChange={this.updateValue}
           value={this.state.handle}
           placeholder="Tweeper Handle"
+          className="login-input"
+        ></input>
+        <input
+          name="password"
+          type="password"
+          onChange={this.updateValue}
+          value={this.state.password}
+          placeholder="Tweeper Password"
           className="login-input"
         ></input>
         <button onClick={this.login} className="login-button">

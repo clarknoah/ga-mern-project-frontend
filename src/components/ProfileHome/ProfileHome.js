@@ -22,16 +22,6 @@ class ProfileHome extends Component{
       userInfo:user,
       tweeps: tweeps
     };
-
-
-
-    api.readUser(props.match.params.handle)
-      .then(
-        res=>{
-
-          console.log(res);
-        }
-      )
   }
 
   componentDidMount(){
