@@ -1,23 +1,41 @@
-/* .UserLogin {
-} */
+@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
+
+:focus {
+  outline: none;
+}
+
+.UserLogin {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .login-input {
   height: 75%;
-  padding: 8px;
+  padding: 5px;
+  font-family: "Alata", sans-serif;
+  font-size: 100%;
 }
+
 .login-button {
   border-radius: 100px;
   height: 100%;
   font-family: Helvetica, Arial, sans-serif;
-  padding: 10px;
-  background-color: rgba(101, 119, 134);
-  color: white;
+  padding: 15px;
+  background-color: white;
+  color: rgb(0, 0, 0);
   font-weight: 700;
-  border: solid white 1.5px;
+  border: solid white 1px;
   margin: 0 20px;
   transition: all ease 0.25s;
   cursor: pointer;
 }
+
 .login-button:hover {
-  background: white;
-  color: rgba(101, 119, 134);
+  background: #0a7aa6;
+  color: white;
+  border: solid white 1.5px;
+}
+
+.logged-in-as {
+  margin: 10px;
+  font-weight: 500;
 }

@@ -1,14 +1,13 @@
-
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import "./CreateUser.css";
 import Input from "../Form/Form.js";
 import Api from "../../Api.js";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 let api = new Api();
 
-class CreateUser extends Component{
-  constructor(props){
+class CreateUser extends Component {
+  constructor(props) {
     super();
     console.log(props);
     this.state = {
@@ -17,25 +16,23 @@ class CreateUser extends Component{
       lastName:'',
       handle:'',
       password:''
-
     };
   }
 
-  componentDidMount(){}
+  componentDidMount() {}
 
-  componentDidUpdate(){}
+  componentDidUpdate() {}
 
-  componentWillUnmount(){}
+  componentWillUnmount() {}
 
-  updateValue = (evt) =>{
+  updateValue = evt => {
     let name = evt.target.name;
     this.setState({
-      [name]:evt.target.value
-    })
-  }
+      [name]: evt.target.value
+    });
+  };
 
-
-  submitUser = (evt)=>{
+  submitUser = evt => {
     evt.preventDefault();
     let user = {
       firstName:this.state.firstName,
@@ -44,19 +41,15 @@ class CreateUser extends Component{
       password:this.state.password
     };
 
-    api.createUser(user)
-      .then(res=>{
-        console.log(res);
-      })
+    api.createUser(user).then(res => {
+      console.log(res);
+    });
+  };
 
-  }
-
-
-
-  render(){
-    return(
+  render() {
+    return (
       <div className={this.state.classList}>
-        <h1>Create A Profile!</h1>
+        <h1 className="create-profile-header">Create A Profile!</h1>
         <form className={"UserForm"}>
         <label>First Name
         <input
@@ -66,15 +59,16 @@ class CreateUser extends Component{
           placeholder="First Name"></input></label>
         <label>Last Name
           <input
-          name="lastName"
+            name="lastName"
             onChange={this.updateValue}
             value={this.state.lastName}
-            placeholder="First Name"></input></label>
+            placeholder="Last Name"></input></label>
         <label>Handle
           <input
             name="handle"
             onChange={this.updateValue}
             value={this.state.handle}
+            placeholder="Handle"
             placeholder="Handle"></input></label>
             <label>Password
               <input

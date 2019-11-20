@@ -20,44 +20,49 @@ function App() {
     <div className="App">
       <header>
         <div className="header-space">
-          <h1>
-            <i>
+          <div className="h1-and-icon">
+            <div className="icon"></div>
+            <h1>
+              {/* <i> */}
               <Link exact={true} to="/" className="h1">
                 Tweeper
               </Link>
-            </i>
-          </h1>
+              {/* </i> */}
+            </h1>
+          </div>
           <Link exact={true} to="/createUser">
             Link
           </Link>
           <UserLogin />
         </div>
       </header>
-      <main>
-        <Route
-          exact={true}
-          path="/"
-          render={() => {
-            return <Home />;
-          }}
-        />
+      <section>
+        <main>
+          <Route
+            exact={true}
+            path="/"
+            render={() => {
+              return <Home />;
+            }}
+          />
 
-        <Route
-          exact={true}
-          path="/createUser"
-          render={() => {
-            return <CreateUser />;
-          }}
-        />
-        <Route
-          exact
-          path="/home"
-          render={renderProps => {
-            return <ProfileHome {...renderProps} />;
-            //  return <ParkDetails {...this.state.currentPark}></ParkDetails>
-          }}
-        />
-      </main>
+          <Route
+            exact={true}
+            path="/createUser"
+            render={() => {
+              return <CreateUser />;
+            }}
+          />
+          <Route
+            exact
+            path="/home"
+            render={renderProps => {
+              return <ProfileHome {...renderProps} />;
+              //  return <ParkDetails {...this.state.currentPark}></ParkDetails>
+            }}
+          />
+        </main>
+      </section>
       <footer></footer>
     </div>
   );

@@ -1,5 +1,4 @@
-
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import "./TweepStream.css";
 import CreateTweep from "../CreateTweep/CreateTweep";
 import ReadTweep from "../ReadTweep/ReadTweep";
@@ -20,6 +19,8 @@ class TweepStream extends Component{
     };
   }
 
+
+  componentDidMount() {}
   sortByDate = (arr)=>{
     arr = arr.sort((a,b)=>{
        a = new Date(a.timestamp);
@@ -42,26 +43,22 @@ class TweepStream extends Component{
       })
   }
 
-  componentDidMount(){}
+  componentDidUpdate() {}
 
-  componentDidUpdate(){}
+  componentWillUnmount() {}
 
-  componentWillUnmount(){}
 
   render(){
-
     let tweeps =  this.state.tweeps.map(val=>{
-      return <ReadTweep key={val._id} user={this.state.user} tweep={val}/>
+      return <ReadTweep key={val._id} user={this.state.user} tweep={val} />
     });
-    return(
+    return (
       <div className={this.state.classList}>
         <div className={"createTweepContainer"}>
           <CreateTweep user={this.state.user} tweepCreated={this.tweepCreated}/>
         </div>
 
-        <div className={"readTweepsContainer"}>
-          {tweeps}
-        </div>
+        <div className={"readTweepsContainer"}>{tweeps}</div>
       </div>
     );
   }
