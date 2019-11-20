@@ -12,7 +12,7 @@ class UserLogin extends Component {
       classList: "UserLogin",
       handle: "",
       loggedIn: false,
-      password:""
+      password: ""
     };
   }
 
@@ -30,21 +30,22 @@ class UserLogin extends Component {
   };
 
   login = () => {
-    api.loginUser(this.state.handle,this.state.password)
-    .then(res => {
-      if(res.data[0]!==undefined){
-        console.log(res.data[0]);
-        this.goToProfile(res.data[0]);
-        this.setState({
-          loggedIn: true
-        });
-      }else{
-        alert("Bad data");
-      }
-    })
-    .catch(err=>{
-      console.log("Something went wrong");
-    })
+    api
+      .loginUser(this.state.handle, this.state.password)
+      .then(res => {
+        if (res.data[0] !== undefined) {
+          console.log(res.data[0]);
+          this.goToProfile(res.data[0]);
+          this.setState({
+            loggedIn: true
+          });
+        } else {
+          alert("Bad data");
+        }
+      })
+      .catch(err => {
+        console.log("Something went wrong");
+      });
   };
 
   logout = () => {
@@ -71,30 +72,34 @@ class UserLogin extends Component {
 
   render() {
     let notLoggedIn = (
-      <div>
-        <input
-          name="handle"
-          onChange={this.updateValue}
-          value={this.state.handle}
-          placeholder="Tweeper Handle"
-          className="login-input"
-        ></input>
-        <input
-          name="password"
-          type="password"
-          onChange={this.updateValue}
-          value={this.state.password}
-          placeholder="Tweeper Password"
-          className="login-input"
-        ></input>
+      <div className="login-info-with-button">
+        <div className="login-info">
+          <input
+            name="handle"
+            onChange={this.updateValue}
+            value={this.state.handle}
+            placeholder="Tweeper Handle"
+            className="login-input"
+          ></input>
+          <input
+            name="password"
+            type="password"
+            onChange={this.updateValue}
+            value={this.state.password}
+            placeholder="Tweeper Password"
+            className="login-input"
+          ></input>
+        </div>
         <button onClick={this.login} className="login-button">
           Log in
         </button>
       </div>
     );
     let loggedIn = (
-      <div>
-        <p className="logged-in-as">Logged In as {this.state.handle}</p>
+      <div className="login-info-with-button">
+        <div className="login-info">
+          <p className="logged-in-as">Logged In as {this.state.handle}</p>
+        </div>
         <button onClick={this.logout} className="login-button">
           Log out
         </button>
