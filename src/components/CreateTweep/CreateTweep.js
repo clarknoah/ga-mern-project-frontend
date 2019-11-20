@@ -29,6 +29,9 @@ class CreateTweep extends Component{
 
   submitTweep=(evt)=>{
     console.log("Submitting Tweep");
+    this.setState({
+      newTweep:""
+    })
   }
 
 

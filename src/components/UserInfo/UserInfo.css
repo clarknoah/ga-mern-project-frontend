@@ -6,6 +6,7 @@
   align-items: flex-start;
   background-color: grey;
   padding: 10px;
+  position: fixed;
 }
 
 
