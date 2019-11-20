@@ -1,68 +1,107 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tweeper - Frontend
 
-## Available Scripts
+A Twitter like clone application with the ability to read, create, delete and update "Tweeps". Additional users can comment on "Tweeps".
 
-In the project directory, you can run:
+## Planning and Design
 
-### `yarn start`
+#### App Plan
+   1. Design Twitter Like App
+   2. Incorporate Jest for Unit Testing
+   3. Build Full CRUD (Create, Read, Update, Delete) capability with Interface
+   4. Seperate Backend and Frontend into different Github Repos
+   5. Have two Non-User Models
+   6. Use MongoDB as NOSQL database
+   
+ #### Front End Requirements
+   1. Use React Router
+   2. Use react
+   3. Use Axios
+   4. Use component library with Storyboard
+   5. Create Axios API
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Minimal Viable Product (MVP) / Tier 3 / Tier 2/ Tier 1
+#### Tier 3 (MVP)
+   Bronze:
+   1. Populate Interface with mock data that is read only, which shows the tweeps of multiple users on their profiles
+   Silver:
+   1. CRUD Ability for Users, and CRUD for Tweeping
+   Gold:
+   1. CRUD for Users, CRUD FOR Tweeping, and CRUD for Commenting
+   
+#### Tier 2
+   Bronze:
+     1. Add images to Tweep
+     2. Add Followers
+  Silver:
+    1. Delete images from Tweep
+    
+#### Tier 1
+   Bronze:
+    1. Add gifs to Tweep
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Initial Design Layout
+<img width="780" alt="tweeper-mock" src="https://media.git.generalassemb.ly/user/22371/files/01cee900-09fb-11ea-9ca7-cad5e8dbe0ae">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+- Users can create "Tweeper" accounts
+- Users can login into their individual accounts
+- Users can create, delete, and manage their own "Tweeps"
+- Users can add, delete, and mannage their own comments 
 
-### `yarn build`
+### Technologies Used
+- React
+- Hygen
+- Jest
+- Axios
+- Storybook
+- Netify
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installing
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+Give the example
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And repeat
 
-### `yarn eject`
+```
+until finished
+```
+## Running the tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Explain how to run the automated tests for this system
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Break down into end to end tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Explain what these tests test and why
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+Give an example
+```
 
-## Learn More
+### And coding style tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Explain what these tests test and why
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+Give an example
+```
 
-### Code Splitting
+## Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Deployed using .......
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Authors
 
-### Making a Progressive Web App
+ **Noah Clark** - Front End / Deployment
+ **Jenna Dean** - Backend / Design
+ **Josh Neves** - Design / Project Management
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* Inspiration - Twitter
+* This project was bootstrapped with [Create React App]
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
