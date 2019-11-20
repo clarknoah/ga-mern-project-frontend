@@ -12,7 +12,8 @@ class UserLogin extends Component{
     super(props);
     this.state = {
       classList: "UserLogin",
-      handle:''
+      handle:'',
+      loggedIn:false
     };
   }
 
@@ -31,26 +32,52 @@ class UserLogin extends Component{
   login = () => {
     api.loginUser(this.state.handle)
       .then(res=>{
-        console.log(res);
-        this.goToProfile(this.state.handle);
+        console.log(res.data[0]);
+        this.goToProfile(res.data[0]);
+        this.setState({
+          loggedIn: true
+        })
       })
   }
 
-  goToProfile = (handle)=>{
+  logout = () => {
+    this.setState({
+      loggedIn:false
+    })
+    this.goToRoot();
+  }
+
+  goToProfile = (props)=>{
     console.log("Clicked");
-    this.props.history.push(`/user/${handle}`);
+    this.props.history.push({
+      pathname:`/home`,
+      state: {data: props }
+    });
+  }
+
+  goToRoot = ()=>{
+    console.log("Clicked");
+    this.props.history.push({
+      pathname:`/`
+    });
   }
 
   render(){
+    let notLoggedIn = ( <div>
+                <input onChange={this.updateHandle} value={this.state.handle}
+                  placeholder="Tweeper Handle"
+                  ></input>
+                <button onClick={this.login}>Login</button>
+                </div>);
+    let loggedIn = (<div>
+                      <p>Logged In as {this.state.handle}</p>
+                      <button onClick={this.logout}>logout</button>
+                    </div>);
     return(
       <div className={this.state.classList}>
-        <input onChange={this.updateHandle} value={this.state.handle}
-          placeholder="Tweeper Handle"
-          ></input>
-        <button
-          onClick={this.login}>Login</button>
+        {this.state.loggedIn ? loggedIn: notLoggedIn}
       </div>
-    );
+        )
   }
 }
 

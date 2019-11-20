@@ -1,17 +1,17 @@
 
 import React, {Component} from 'react';
-import "./CreateTweep.css";
+import "./CreateComment.css";
 import Api from "../../Api.js";
 
 const api = new Api ();
 
-class CreateTweep extends Component{
+class CreateComment extends Component{
   constructor(props){
-    super();
+    super(props);
     console.log(props);
     this.state = {
-      classList: "CreateTweep",
-      newTweep:""
+      classList: "CreateComment",
+      newComment:""
     };
   }
 
@@ -28,10 +28,7 @@ class CreateTweep extends Component{
   }
 
   submitTweep=(evt)=>{
-    console.log("Submitting Tweep");
-    this.setState({
-      newTweep:""
-    })
+    console.log("Submitting Comment");
   }
 
 
@@ -39,15 +36,15 @@ class CreateTweep extends Component{
   render(){
     return(
       <div className={this.state.classList}>
-        Create a new Tweep!
+        Add Comment
         <textarea
-        value={this.state.newTweep}
+        value={this.state.newComment}
         onChange={this.updateValue}
         ></textarea>
-        <button onClick={this.submitTweep}>Submit</button>
+        <button onClick={this.submitComment}>Submit</button>
       </div>
     );
   }
 }
 
-export default CreateTweep;
+export default CreateComment;
