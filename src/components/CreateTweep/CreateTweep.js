@@ -11,7 +11,8 @@ class CreateTweep extends Component{
     console.log(props);
     this.state = {
       classList: "CreateTweep",
-      newTweep:""
+      newTweep:"",
+      user: props.user
     };
   }
 
@@ -29,9 +30,20 @@ class CreateTweep extends Component{
 
   submitTweep=(evt)=>{
     console.log("Submitting Tweep");
-    this.setState({
-      newTweep:""
-    })
+    let handle = this.state.user.handle;
+    let tweep = {
+      tweepContent:this.state.newTweep,
+      timestamp:new Date()
+    }
+    api.createTweep(handle,tweep)
+      .then(res=>{
+        this.props.tweepCreated();
+        console.log("Tweep Created");
+        this.setState({
+          newTweep:""
+        });
+      })
+
   }
 
 

@@ -5,6 +5,8 @@ class Api {
     this.root = "http://localhost:5555";
     this.userRoot = `${this.root}/user`;
     this.login = `${this.root}/login`;
+    this.tweepRoot = `/tweeps`;
+    this.commentRoot = `/comments`;
 
   }
 
@@ -28,44 +30,109 @@ class Api {
     return X.put(this.getUserPath(id), update);
   }
 
-  deleteUser=()=>{
-
+  deleteUser=(id)=>{
+    return X.delete(id);
   }
 
   readUser=(handle)=>{
-    return X.get(this.getUserPath(handle));
+    let path = this.getUserPath(handle);
+    console.log(path);
+    return X.get(path);
   }
 
-  readTweeps=()=>{
-
+  readTweeps=(handle)=>{
+    return X.get(
+      `${this.getUserPath(handle)}${this.tweepRoot}`
+    )
   }
 
-  createTweep=()=>{
-
+  readTweep=(handle, tweepId)=>{
+    return X.get(
+      `${this.getUserPath(handle)}${this.tweepRoot}/${tweepId}`
+    )
   }
 
-  updateTweep=()=>{
-
+  createTweep=(handle, tweepData)=>{
+    let path = `${this.getUserPath(handle)}${this.tweepRoot}`;
+    console.log(path);
+    return X.post(
+      path,tweepData
+    );
   }
 
-  deleteTweep=()=>{
-
+  updateTweep=(handle, tweepId, tweepData)=>{
+    let path = `
+    ${this.getUserPath(handle)}
+    ${this.tweepRoot}/
+    ${tweepId}
+    `;
+    console.log(path);
+    return X.put(
+      path,
+      tweepData
+    );
   }
 
-  readComments=()=>{
-
+  deleteTweep=(handle, tweepId)=>{
+    let path = `
+    ${this.getUserPath(handle)}
+    ${this.tweepRoot}/
+    ${tweepId}
+    `;
+    console.log(path);
+    return X.delete(
+      path
+    );
   }
 
-  createComment=()=>{
-
+  readComment=(handle, tweepId, commentId)=>{
+    let path = `
+    ${this.getUserPath(handle)}
+    ${this.tweepRoot}/
+    ${tweepId}/
+    ${this.commentRoot}/
+    ${commentId}
+    `;
+    console.log(path);
+    return X.get(
+      path
+    );
   }
 
-  updateComment=()=>{
-
+  createComment=(handle, tweepId, commentContent)=>{
+    let path = `${this.getUserPath(handle)}${this.tweepRoot}/${tweepId}${this.commentRoot}`;
+    console.log(path);
+    return X.post(
+      path, commentContent
+    );
   }
 
-  deleteComment=()=>{
+  updateComment=(handle, tweepId, commentId, commentContent)=>{
+    let path = `
+    ${this.getUserPath(handle)}
+    ${this.tweepRoot}/
+    ${tweepId}/
+    ${this.commentRoot}/
+    ${commentId}
+    `;
+    console.log(path);
+    return X.put(
+      path,commentContent
+    );
+  }
 
+  deleteComment=(handle, tweepId, commentId)=>{
+    let path = `
+    ${this.getUserPath(handle)}
+    ${this.tweepRoot}/
+    ${tweepId}/
+    ${this.commentRoot}/
+    ${commentId}
+    `;
+    console.log(path);
+    return X.delete(
+      path
+    );
   }
 
 }
