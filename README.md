@@ -23,8 +23,10 @@ A Twitter like clone application with the ability to read, create, delete and up
 #### Tier 3 (MVP)
    Bronze:
    1. Populate Interface with mock data that is read only, which shows the tweeps of multiple users on their profiles
+   
    Silver:
    1. CRUD Ability for Users, and CRUD for Tweeping
+   
    Gold:
    1. CRUD for Users, CRUD FOR Tweeping, and CRUD for Commenting
    
@@ -32,6 +34,7 @@ A Twitter like clone application with the ability to read, create, delete and up
    Bronze:
      1. Add images to Tweep
      2. Add Followers
+     
   Silver:
     1. Delete images from Tweep
     
