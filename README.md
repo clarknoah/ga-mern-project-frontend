@@ -99,7 +99,9 @@ Give an example
 ## Authors
 
  **Noah Clark** - Front End / Deployment
+ 
  **Jenna Dean** - Backend / Design
+ 
  **Josh Neves** - Design / Project Management
 
 
