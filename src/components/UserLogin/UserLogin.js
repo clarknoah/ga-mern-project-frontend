@@ -75,7 +75,7 @@ class UserLogin extends Component {
     );
     let loggedIn = (
       <div>
-        <p>Logged In as {this.state.handle}</p>
+        <p className="logged-in-as">Logged In as {this.state.handle}</p>
         <button onClick={this.logout} className="login-button">
           Log out
         </button>
