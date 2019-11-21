@@ -5,15 +5,10 @@ import CreateComment from "../CreateComment/CreateComment";
 import Api from "../../Api";
 import {withRouter} from "react-router-dom";
 let api = new Api();
-<<<<<<< HEAD
-class ReadTweep extends Component{
-  constructor(props){
-    super(props);
-=======
+
 class ReadTweep extends Component {
   constructor(props) {
-    super();
->>>>>>> c25f7a8a18c1bb0c74883b5ecf041232c835432b
+    super(props);
     let tweep = props.tweep;
     let date = new Date(tweep.timestamp);
     tweep.timestamp = this.formatDate(date);
@@ -64,7 +59,6 @@ class ReadTweep extends Component {
     console.log("The Comment was created");
     let handle = this.state.user.handle;
     let tweepId = this.state.tweep._id;
-<<<<<<< HEAD
     api.readTweep(handle, tweepId)
       .then(res=>{
         console.log("New Comments", res);
@@ -83,7 +77,7 @@ class ReadTweep extends Component {
 
     let handle = this.state.tweep.authorHandle;
     let tweepId = this.state.tweep._id;
-    let currentUser = localStorage.getItems("activeUser");
+    let currentUser = localStorage.getItem("activeUser");
 
 
     api.deleteTweep(handle, tweepId)
@@ -92,16 +86,6 @@ class ReadTweep extends Component {
         this.props.delete(tweepId)
       })
   }
-=======
-    api.readTweep(handle, tweepId).then(res => {
-      console.log("New Comments", res);
-      let comments = this.sortByDate(res.data.comments);
-      this.setState({
-        comments: comments
-      });
-    });
-  };
->>>>>>> c25f7a8a18c1bb0c74883b5ecf041232c835432b
 
   updateTweep = () => {};
 
@@ -111,11 +95,22 @@ class ReadTweep extends Component {
     console.log("Read Tweep Updated");
   }
 
+  deleteComment=(commentId)=>{
+    let comments = this.state.comments.filter((comment)=>{
+      return comment._id!==commentId;
+    })
+    console.log(commentId);
+    this.setState({
+      comments:comments
+    })
+  }
+
+
   componentWillUnmount() {}
 
   render() {
     let comments = this.state.comments.map(val => {
-      return <ReadComment key={val._id} data={val} />;
+      return <ReadComment tweepId={this.state.tweep._id} delete={this.deleteComment} key={val._id} data={val} />;
     });
     return (
       <div className={this.state.classList}>
@@ -124,13 +119,9 @@ class ReadTweep extends Component {
             {this.state.user.handle}| {`${this.state.tweep.timestamp} `}
           </h6>
         </div>
-<<<<<<< HEAD
-        <p>{this.state.tweep.tweepContent}</p>
+        <p className="tweep-content">{this.state.tweep.tweepContent}</p>
         {this.state.author ? <button onClick={this.deleteTweep} >Delete</button> : <div/> }
 
-=======
-        <p className="tweep-content">{this.state.tweep.tweepContent}</p>
->>>>>>> c25f7a8a18c1bb0c74883b5ecf041232c835432b
         {comments}
         <CreateComment
           commentCreated={this.commentCreated}

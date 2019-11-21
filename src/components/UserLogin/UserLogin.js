@@ -8,10 +8,13 @@ let api = new Api();
 class UserLogin extends Component {
   constructor(props) {
     super(props);
+    let activeUser = localStorage.getItem("activeUser");
+    console.log(activeUser);
+    let userLoggedIn = activeUser!== null;
     this.state = {
       classList: "UserLogin",
       handle: "",
-      loggedIn: false,
+      loggedIn: userLoggedIn,
       password: ""
     };
   }
@@ -73,6 +76,7 @@ class UserLogin extends Component {
   };
 
   render() {
+    let activeUser = localStorage.getItem('activeUser');
     let notLoggedIn = (
       <div className="login-info-with-button">
         <div className="login-info">
@@ -100,7 +104,7 @@ class UserLogin extends Component {
     let loggedIn = (
       <div className="login-info-with-button">
         <div className="login-info">
-          <p className="logged-in-as">Logged In as {this.state.handle}</p>
+          <p className="logged-in-as">Logged In as {activeUser}</p>
         </div>
         <button onClick={this.logout} className="login-button">
           Log out

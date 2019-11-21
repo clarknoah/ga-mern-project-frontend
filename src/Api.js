@@ -30,6 +30,21 @@ class Api {
     return X.post(this.search,user);
   }
 
+  followUser=(user)=>{
+    if(localStorage.getItem('activeUser')){
+      let activeUser = localStorage.getItem('activeUser');
+      let body = {follow:user};
+      return X.post(`${this.userRoot}/${activeUser}/follow`,body);
+    }
+  }
+
+  unfollowUser=(user)=>{
+    if(localStorage.getItem('activeUser')){
+      let body = {unfollow:user};
+      let activeUser = localStorage.getItem('activeUser');
+      return X.post(`${this.root}/${activeUser}/unfollow`,body);
+    }
+  }
   createUser=(user)=>{
     return X.post(this.userRoot,user);
   }
@@ -69,11 +84,7 @@ class Api {
   }
 
   updateTweep=(handle, tweepId, tweepData)=>{
-    let path = `
-    ${this.getUserPath(handle)}
-    ${this.tweepRoot}/
-    ${tweepId}
-    `;
+    let path = `${this.getUserPath(handle)}${this.tweepRoot}/${tweepId}`;
     console.log(path);
     return X.put(
       path,
@@ -112,13 +123,7 @@ class Api {
   }
 
   updateComment=(handle, tweepId, commentId, commentContent)=>{
-    let path = `
-    ${this.getUserPath(handle)}
-    ${this.tweepRoot}/
-    ${tweepId}/
-    ${this.commentRoot}/
-    ${commentId}
-    `;
+    let path = `${this.getUserPath(handle)}${this.tweepRoot}/${tweepId}/${this.commentRoot}/${commentId}`;
     console.log(path);
     return X.put(
       path,commentContent
@@ -126,13 +131,7 @@ class Api {
   }
 
   deleteComment=(handle, tweepId, commentId)=>{
-    let path = `
-    ${this.getUserPath(handle)}
-    ${this.tweepRoot}/
-    ${tweepId}/
-    ${this.commentRoot}/
-    ${commentId}
-    `;
+    let path = `${this.getUserPath(handle)}${this.tweepRoot}/${tweepId}${this.commentRoot}/${commentId}`;
     console.log(path);
     return X.delete(
       path
