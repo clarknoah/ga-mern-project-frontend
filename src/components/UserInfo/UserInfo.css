@@ -1,15 +1,15 @@
-
 .UserInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: grey;
+  /* background-color: grey; */
   padding: 10px;
+  font-family: Alata, sans-serif;
+  width: 100%;
 }
 
-
-.UserInfo h3,h5{
-  margin:2px;
-
+.UserInfo h3,
+h5 {
+  margin: 2px;
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
+
 .TweepStream {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,10 @@
   border: 1px solid darkblue;
   background: white;
   overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+  font-family: Alata, Helvetica, sans-serif;
+  /* height: 100%; */
 }
 
 .createTweepContainer {
@@ -13,6 +19,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 .readTweepsContainer {

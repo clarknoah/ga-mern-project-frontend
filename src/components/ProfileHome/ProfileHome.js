@@ -1,16 +1,14 @@
-
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import "./ProfileHome.css";
-import Api from '../../Api';
-import UserInfo from '../UserInfo/UserInfo.js';
-import TweepStream from '../TweepStream/TweepStream';
-import FollowingBox from '../FollowingBox/FollowingBox';
+import Api from "../../Api";
+import UserInfo from "../UserInfo/UserInfo.js";
+import TweepStream from "../TweepStream/TweepStream";
+import FollowingBox from "../FollowingBox/FollowingBox";
 
 let api = new Api();
 
-
-class ProfileHome extends Component{
-  constructor(props){
+class ProfileHome extends Component {
+  constructor(props) {
     super(props);
     let user = props.location.state.data;
     let tweeps = user.tweeps;
@@ -19,33 +17,35 @@ class ProfileHome extends Component{
     console.log(user);
     this.state = {
       classList: "ProfileHome",
-      handle:user.handle,
-      userInfo:user,
+      handle: user.handle,
+      userInfo: user,
       tweeps: tweeps
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log("ProfileHome Mounted");
-
   }
 
-  componentDidUpdate(){}
+  componentDidUpdate() {}
 
-  componentWillUnmount(){}
+  componentWillUnmount() {}
 
-  render(){
-    return(
+  render() {
+    return (
       <div className={this.state.classList}>
-      <div id="UserInfoContainer" className={"UserInfoContainer"}>
-        <UserInfo {...this.state.userInfo}/>
-      </div>
-      <div id="FollowingContainer" className={"FollowingContainer"}>
-        <FollowingBox following={this.state.userInfo.following}/>
-      </div>
-      <div id="TweepStreamContainer" className={"TweepStreamContainer"}>
-        <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps}/>
-      </div>
+        {/* <div className="profile-home"> */}
+        {/* <div className="profile-picture"></div> */}
+        <div id="UserInfoContainer" className={"UserInfoContainer"}>
+          <UserInfo {...this.state.userInfo} />
+        </div>
+        <div id="FollowingContainer" className={"FollowingContainer"}>
+          <FollowingBox following={this.state.userInfo.following} />
+        </div>
+        <div id="TweepStreamContainer" className={"TweepStreamContainer"}>
+          <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps} />
+        </div>
+        {/* </div> */}
       </div>
     );
   }

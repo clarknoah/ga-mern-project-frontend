@@ -34,37 +34,39 @@ function App() {
           <UserLogin />
         </div>
       </header>
-      <main>
-        <Route
-          exact={true}
-          path="/"
-          render={() => {
-            return <Home />;
-          }}
-        />
+      <section>
+        <main>
+          <Route
+            exact={true}
+            path="/"
+            render={() => {
+              return <Home />;
+            }}
+          />
 
-        <Route
-          exact={true}
-          path="/createUser"
-          render={() => {
-            return <CreateUser />;
-          }}
-        />
-        <Route
-          exact
-          path="/home"
-          render={renderProps => {
-            return <ProfileHome {...renderProps} />;
-          }}
-        />
-        <Route
-          exact
-          path="/user:handle"
-          render={renderProps => {
-            return <FollowingHome {...renderProps} />;
-          }}
-        />
-      </main>
+          <Route
+            exact={true}
+            path="/createUser"
+            render={() => {
+              return <CreateUser />;
+            }}
+          />
+          <Route
+            exact
+            path="/home"
+            render={renderProps => {
+              return <ProfileHome {...renderProps} />;
+            }}
+          />
+          <Route
+            exact
+            path="/user:handle"
+            render={renderProps => {
+              return <FollowingHome {...renderProps} />;
+            }}
+          />
+        </main>
+      </section>
       <footer></footer>
     </div>
   );
