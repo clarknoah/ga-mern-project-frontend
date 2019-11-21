@@ -1,8 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
 
 .CreateTweep {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.create-tweep {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px 30px 5px;
+  /* border-top: 1px solid grey; */
+  border-bottom: 5px solid rgba(173, 170, 170, 0.5);
+  border-radius: 2px;
+  width: 70%;
+  font-family: Alata, sans-serif;
+}
+
+textarea {
+  margin: 10px;
+}
+
+.submit-tweep-button {
+  border-radius: 40px;
+  background-color: rgba(251, 14, 14, 0.9);
+  color: white;
+  font-family: Alata;
+  padding: 7px;
+  width: 30%;
+  margin: 10px;
 }

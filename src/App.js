@@ -37,14 +37,15 @@ function App() {
           <UserLogin />
         </div>
       </header>
-      <main>
-        <Route
-          exact={true}
-          path="/"
-          render={() => {
-            return <Home />;
-          }}
-        />
+      <section>
+        <main>
+          <Route
+            exact={true}
+            path="/"
+            render={() => {
+              return <Home />;
+            }}
+          />
 
         <Route
           exact={true}
@@ -75,6 +76,7 @@ function App() {
           }}
         />
       </main>
+      </section>
       <footer></footer>
     </div>
   );
