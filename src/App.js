@@ -21,7 +21,10 @@ function App() {
       <header>
         <div className="header-space">
           <div className="h1-and-icon">
-            <div className="icon"></div>
+            <Link exact={true} to="/">
+              <div className="icon"></div>
+            </Link>
+
             <h1>
               <Link exact={true} to="/" className="h1">
                 Tweeper
