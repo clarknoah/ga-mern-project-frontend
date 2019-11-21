@@ -52,19 +52,16 @@ class FollowingHome extends Component{
   }
 
   componentDidUpdate(props){
-    console.log(props);
-    let user = this.props.history.location.state;
-    let tweeps = user.tweeps;
-    // this.setState({
-    //   handle:user.handle,
-    //   userInfo: user,
-    //   tweeps: tweeps
-    // })
-  }
-
-  getDerivedStateFromProps(props){
-    console.log(props);
-  //  this.setState{}
+    console.log(props.location.state.handle,this.state.handle);
+    let notSameUser = props.location.state.handle !== this.state.handle;
+    if(notSameUser){
+      let user = props.location.state;
+      this.setState({
+        handle:user.handle,
+        userInfo: user,
+        tweeps: user.tweeps
+      })
+    }
   }
 
 

@@ -64,7 +64,7 @@ function App() {
         <Route
           exact
           path="/user/:handle"
-          render={renderProps => {
+          component={renderProps => {
             console.log("I am secret");
             console.log(renderProps);
             return <FollowingHome {...renderProps} />;

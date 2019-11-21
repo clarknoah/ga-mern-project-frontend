@@ -37,7 +37,7 @@ class FollowingBox extends Component {
 
   render(){
     let following = this.state.following.map(val=>{
-        return <div onClick={this.goToUser} handle={val}
+        return <div key={val} onClick={this.goToUser} handle={val}
         className={"FollowingUser"}>{val}</div>
     })
     return(
