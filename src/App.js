@@ -23,11 +23,9 @@ function App() {
           <div className="h1-and-icon">
             <div className="icon"></div>
             <h1>
-              {/* <i> */}
               <Link exact={true} to="/" className="h1">
                 Tweeper
               </Link>
-              {/* </i> */}
             </h1>
           </div>
           <Link exact={true} to="/createUser">

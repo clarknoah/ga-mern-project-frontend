@@ -12,10 +12,10 @@ class CreateUser extends Component {
     console.log(props);
     this.state = {
       classList: "CreateUser",
-      firstName:'',
-      lastName:'',
-      handle:'',
-      password:''
+      firstName: "",
+      lastName: "",
+      handle: "",
+      password: ""
     };
   }
 
@@ -35,10 +35,10 @@ class CreateUser extends Component {
   submitUser = evt => {
     evt.preventDefault();
     let user = {
-      firstName:this.state.firstName,
-      lastName:this.state.lastName,
-      handle:this.state.handle,
-      password:this.state.password
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      handle: this.state.handle,
+      password: this.state.password
     };
 
     api.createUser(user).then(res => {
@@ -50,34 +50,51 @@ class CreateUser extends Component {
     return (
       <div className={this.state.classList}>
         <h1 className="create-profile-header">Create A Profile!</h1>
+        <hr></hr>
         <form className={"UserForm"}>
-        <label>First Name
-        <input
-          name="firstName"
-          onChange={this.updateValue}
-          value={this.state.firstName}
-          placeholder="First Name"></input></label>
-        <label>Last Name
-          <input
-            name="lastName"
-            onChange={this.updateValue}
-            value={this.state.lastName}
-            placeholder="Last Name"></input></label>
-        <label>Handle
-          <input
-            name="handle"
-            onChange={this.updateValue}
-            value={this.state.handle}
-            placeholder="Handle"
-            placeholder="Handle"></input></label>
-            <label>Password
+          <div className="full-name">
+            <label>
+              {/* First Name */}
               <input
-                name="password"
-                type="password"
+                name="firstName"
                 onChange={this.updateValue}
-                value={this.state.password}
-                placeholder="password"></input></label>
-                <button onClick={this.submitUser}>Submit User</button>
+                value={this.state.firstName}
+                placeholder="First Name"
+              ></input>
+            </label>
+            <label>
+              {/* Last Name */}
+              <input
+                name="lastName"
+                onChange={this.updateValue}
+                value={this.state.lastName}
+                placeholder="Last Name"
+              ></input>
+            </label>
+          </div>
+          <label>
+            {/* Handle */}
+            <input
+              name="handle"
+              onChange={this.updateValue}
+              value={this.state.handle}
+              placeholder="Handle"
+              placeholder="Handle"
+            ></input>
+          </label>
+          <label>
+            {/* Password */}
+            <input
+              name="password"
+              type="password"
+              onChange={this.updateValue}
+              value={this.state.password}
+              placeholder="Password"
+            ></input>
+          </label>
+          <button onClick={this.submitUser} className="submit-user-button">
+            Submit
+          </button>
         </form>
       </div>
     );
