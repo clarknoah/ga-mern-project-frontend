@@ -74,7 +74,7 @@ class ReadTweep extends Component {
   deleteTweep = () => {
     let handle = this.state.tweep.authorHandle;
     let tweepId = this.state.tweep._id;
-    let currentUser = localStorage.getItems("activeUser");
+    let currentUser = localStorage.getItem("activeUser");
 
     api.deleteTweep(handle, tweepId).then(res => {
       console.log(res);
@@ -89,6 +89,16 @@ class ReadTweep extends Component {
   componentDidUpdate() {
     console.log("Read Tweep Updated");
   }
+
+  deleteComment = commentId => {
+    let comments = this.state.comments.filter(comment => {
+      return comment._id !== commentId;
+    });
+    console.log(commentId);
+    this.setState({
+      comments: comments
+    });
+  };
 
   componentWillUnmount() {}
 
@@ -111,6 +121,7 @@ class ReadTweep extends Component {
           </h6>
         </div>
         <p className="tweep-content">{this.state.tweep.tweepContent}</p>
+
         {this.state.author ? (
           <button onClick={this.deleteTweep}>Delete</button>
         ) : (
