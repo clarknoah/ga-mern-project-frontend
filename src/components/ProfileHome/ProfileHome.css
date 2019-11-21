@@ -1,11 +1,22 @@
-
 .ProfileHome {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 1fr 4fr;
   grid-gap: 5px;
   height: 100%;
 }
+
+/* .profile-picture {
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  border: solid gray 1px;
+  /* background-image: <how to upload profile picture> */
+/* } */
+
+/* .profile-home {
+  width: 100%;
+} */
 
 .UserInfoContainer {
   grid-area: 1 / 1 / 2 / 2;

@@ -29,11 +29,11 @@ header {
   height: 50px;
   color: white;
   padding: 25px;
-  margin: 18px 0px;
+  margin: 18px 0px 0 0;
   height: 20%;
 }
 section {
-  background: #e6ecf0;
+  background: #e1eef6f6;
   height: 70%;
   width: 100%;
 }
@@ -82,6 +82,7 @@ footer {
   background-repeat: no-repeat;
   height: 35px;
   width: 35px;
+  /* filter: drop-shadow(2px 2px 2px #222); */
   filter: invert(100%);
   margin: 0 15px;
 }
@@ -101,7 +102,7 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-  h1 {
+  .h1 {
     display: none;
   }
 }

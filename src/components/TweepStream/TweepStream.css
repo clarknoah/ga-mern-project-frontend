@@ -6,6 +6,8 @@
   border: 1px solid darkblue;
   background: white;
   overflow: hidden;
+  width: 100%;
+  max-width: 700px;
 }
 
 .createTweepContainer {
