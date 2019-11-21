@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import "./ProfileHome.css";
+import "./FollowingHome.css";
 import Api from '../../Api';
 import UserInfo from '../UserInfo/UserInfo.js';
 import TweepStream from '../TweepStream/TweepStream';
@@ -9,7 +9,7 @@ import FollowingBox from '../FollowingBox/FollowingBox';
 let api = new Api();
 
 
-class ProfileHome extends Component{
+class FollowingHome extends Component{
   constructor(props){
     super(props);
     let user = props.location.state.data;
@@ -18,7 +18,7 @@ class ProfileHome extends Component{
 
     console.log(user);
     this.state = {
-      classList: "ProfileHome",
+      classList: "FollowingHome",
       handle:user.handle,
       userInfo:user,
       tweeps: tweeps
@@ -26,7 +26,7 @@ class ProfileHome extends Component{
   }
 
   componentDidMount(){
-    console.log("ProfileHome Mounted");
+    console.log("FollowingHome Mounted");
 
   }
 
@@ -51,4 +51,4 @@ class ProfileHome extends Component{
   }
 }
 
-export default ProfileHome;
+export default FollowingHome;

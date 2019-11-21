@@ -1,9 +1,8 @@
 # Tweeper - Frontend
 
-A Twitter like clone application with the ability to read, create, delete and update "Tweeps". Additional users can comment on "Tweeps".
+A Twitter like clone application with the ability to read, create, delete and update "Tweeps". Additionally, users can comment on others "Tweeps".
 
 ## Planning and Design
-
 #### App Plan
    1. Design Twitter Like App
    2. Incorporate Jest for Unit Testing
@@ -21,27 +20,23 @@ A Twitter like clone application with the ability to read, create, delete and up
 
 ### Minimal Viable Product (MVP) / Tier 3 / Tier 2/ Tier 1
 #### Tier 3 (MVP)
-   Bronze:
-   1. Populate Interface with mock data that is read only, which shows the tweeps of multiple users on their profiles
-   
-   Silver:
-   1. CRUD Ability for Users, and CRUD for Tweeping
-   
-   Gold:
-   1. CRUD for Users, CRUD FOR Tweeping, and CRUD for Commenting
+   - Populate Interface with mock data that is read only, which shows the tweeps of multiple users on their profiles
+   - CRUD Ability for Users, and CRUD for Tweeping
+   - CRUD for Users, CRUD FOR Tweeping, and CRUD for Commenting
    
 #### Tier 2
    Bronze:
-     1. Add images to Tweep
-     2. Add Followers
+   - View profile of others
+   - Add Followers
      
   Silver:
-    1. Delete images from Tweep
+  - Add profile pictures
+  - Add "like" button
     
 #### Tier 1
    Bronze:
-    1. Add gifs to Tweep
-
+   - Send pictures as tweep
+   - Send 
 
 ### Initial Design Layout
 <img width="780" alt="tweeper-mock" src="https://media.git.generalassemb.ly/user/22371/files/01cee900-09fb-11ea-9ca7-cad5e8dbe0ae">
@@ -66,11 +61,7 @@ A Twitter like clone application with the ability to read, create, delete and up
 Give the example
 ```
 
-And repeat
 
-```
-until finished
-```
 ## Running the tests
 
 Explain how to run the automated tests for this system

@@ -1,0 +1,19 @@
+
+.FollowingBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:center;
+  align-content: center;
+  background-color: lightpink;
+}
+
+.FollowingUser {
+  cursor:pointer;
+  padding: 10px;
+}
+
+.FollowingUser:hover{
+  transform:scale(1.2);
+  text-shadow: 1px 1px 1px 1px 1px black;
+}
