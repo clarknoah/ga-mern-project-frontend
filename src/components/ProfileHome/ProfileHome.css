@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
+
 .ProfileHome {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 1fr 4fr;
   grid-gap: 5px;
   height: 100%;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 /* .profile-picture {
@@ -19,13 +23,22 @@
 } */
 
 .UserInfoContainer {
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1 / 1 / 2 / 1;
 }
 
 .FollowingContainer {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 3 / 1 / 3 / 1;
+  font-family: Alata;
 }
 
 .TweepStreamContainer {
-  grid-area: 1 / 2 / 3 / 3;
+  grid-row: 1 / span 3;
+  grid-column: 2 / span 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .ProfileHome {
+    display: flex;
+    flex-direction: column;
+  }
 }

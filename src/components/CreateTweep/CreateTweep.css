@@ -14,10 +14,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  width: 100%;
+  padding: 10px 5px 30px 5px;
+  /* border-top: 1px solid grey; */
+  border-bottom: 5px solid rgba(173, 170, 170, 0.5);
+  border-radius: 2px;
+  width: 70%;
   font-family: Alata, sans-serif;
 }
 
@@ -31,6 +32,6 @@ textarea {
   color: white;
   font-family: Alata;
   padding: 7px;
-  width: 50%;
+  width: 30%;
   margin: 10px;
 }

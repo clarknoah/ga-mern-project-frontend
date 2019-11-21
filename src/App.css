@@ -82,7 +82,6 @@ footer {
   background-repeat: no-repeat;
   height: 35px;
   width: 35px;
-  /* filter: drop-shadow(2px 2px 2px #222); */
   filter: invert(100%);
   margin: 0 15px;
 }
