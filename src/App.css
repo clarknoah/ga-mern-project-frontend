@@ -77,19 +77,14 @@ footer {
   align-items: center;
 }
 .icon {
-  background: url("icon20.png") center no-repeat;
-  height: 30px;
-  width: 30px;
+  background-image: url("icon35.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 35px;
   filter: invert(100%);
   margin: 0 15px;
 }
-/* input[type=text] {
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding-left: 40px;
-} */
 .h1 {
   height: 80%;
   align-self: center;
