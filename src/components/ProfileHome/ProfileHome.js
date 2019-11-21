@@ -34,18 +34,18 @@ class ProfileHome extends Component {
   render() {
     return (
       <div className={this.state.classList}>
-        {/* <div className="profile-home"> */}
-        {/* <div className="profile-picture"></div> */}
-        <div id="UserInfoContainer" className={"UserInfoContainer"}>
-          <UserInfo {...this.state.userInfo} />
-        </div>
-        <div id="FollowingContainer" className={"FollowingContainer"}>
-          <FollowingBox following={this.state.userInfo.following} />
+        <div className="profile-left-side">
+          {/* <div className="profile-picture"></div> */}
+          <div id="UserInfoContainer" className={"UserInfoContainer"}>
+            <UserInfo {...this.state.userInfo} />
+          </div>
+          <div id="FollowingContainer" className={"FollowingContainer"}>
+            <FollowingBox following={this.state.userInfo.following} />
+          </div>
         </div>
         <div id="TweepStreamContainer" className={"TweepStreamContainer"}>
           <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps} />
         </div>
-        {/* </div> */}
       </div>
     );
   }

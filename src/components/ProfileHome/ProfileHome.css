@@ -1,42 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
 
 .ProfileHome {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 1fr 4fr;
-  grid-gap: 5px;
   height: 100%;
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-/* .profile-picture {
-  width: 20px;
-  height: 20px;
-  border-radius: 100px;
-  border: solid gray 1px;
-  /* background-image: <how to upload profile picture> */
-/* } */
-
-/* .profile-home {
-  width: 100%;
-} */
-
-.UserInfoContainer {
-  grid-area: 1 / 1 / 2 / 1;
+.profile-left-side {
+  display: flex;
+  flex-direction: column;
 }
 
 .FollowingContainer {
-  grid-area: 3 / 1 / 3 / 1;
   font-family: Alata;
 }
 
 .TweepStreamContainer {
-  grid-row: 1 / span 3;
-  grid-column: 2 / span 1;
+  border: 1px solid grey;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: scroll;
+  padding: 2px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .ProfileHome {
     display: flex;
     flex-direction: column;
