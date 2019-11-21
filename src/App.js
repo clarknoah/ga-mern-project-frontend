@@ -20,13 +20,14 @@ function App() {
     <div className="App">
       <header>
         <div className="header-space">
-          <h1>
-            <i>
+          <div className="h1-and-icon">
+            <div className="icon"></div>
+            <h1>
               <Link exact={true} to="/" className="h1">
                 Tweeper
               </Link>
-            </i>
-          </h1>
+            </h1>
+          </div>
           <Link exact={true} to="/createUser">
             Link
           </Link>
