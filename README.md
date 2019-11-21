@@ -91,7 +91,7 @@ Give an example
 
 ## Authors
 
- **Noah Clark** - Front End / Deployment
+ **Noah Clark** - Full Stack / Deployment
  
  **Jenna Dean** - Backend / Design
  
