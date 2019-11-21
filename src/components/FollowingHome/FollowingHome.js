@@ -31,18 +31,55 @@ class FollowingHome extends Component{
 
   }
 
-  componentDidUpdate(){}
+  shouldComponentUpdate(props){
+    // let pastUser = this.state.handle;
+    // let newUser = props.location.state.handle;
+    // console.log(pastUser, newUser);
+    // if(pastUser!==newUser){
+    //   this.updateUserState(props);
+    // }
+    return true;
+  }
+
+  updateUserState=(props)=>{
+    console.log(props);
+    let user = props;
+    this.props.history.push({
+      pathname:"/user/"+user.handle,
+      state:props
+    })
+
+  }
+
+  componentDidUpdate(props){
+    console.log(props);
+    let user = this.props.history.location.state;
+    let tweeps = user.tweeps;
+    // this.setState({
+    //   handle:user.handle,
+    //   userInfo: user,
+    //   tweeps: tweeps
+    // })
+  }
+
+  getDerivedStateFromProps(props){
+    console.log(props);
+  //  this.setState{}
+  }
+
+
 
   componentWillUnmount(){}
 
   render(){
+
     return(
       <div className={this.state.classList}>
       <div id="UserInfoContainer" className={"UserInfoContainer"}>
         <UserInfo {...this.state.userInfo}/>
       </div>
       <div id="FollowingContainer" className={"FollowingContainer"}>
-        <FollowingBox following={this.state.userInfo.following}/>
+        <FollowingBox updatePage={this.updateUserState} following={this.state.userInfo.following}/>
       </div>
       <div id="TweepStreamContainer" className={"TweepStreamContainer"}>
         <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps}/>
