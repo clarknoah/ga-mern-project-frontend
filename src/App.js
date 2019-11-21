@@ -7,6 +7,8 @@ import CreateUser from "./components/CreateUser/CreateUser.js";
 import ProfileHome from "./components/ProfileHome/ProfileHome.js";
 import UserLogin from "./components/UserLogin/UserLogin.js";
 import FollowingHome from "./components/FollowingHome/FollowingHome";
+import SearchPage from "./components/SearchPage/SearchPage";
+import SearchBox from "./components/SearchBox/SearchBox";
 let RootRoute = (
   <Route
     path="/"
@@ -27,9 +29,11 @@ function App() {
               </Link>
             </i>
           </h1>
+
           <Link exact={true} to="/createUser">
             Link
           </Link>
+          <SearchBox/>
           <UserLogin />
         </div>
       </header>
@@ -58,9 +62,16 @@ function App() {
         />
         <Route
           exact
-          path="/user:handle"
+          path="/user/:handle"
           render={renderProps => {
             return <FollowingHome {...renderProps} />;
+          }}
+        />
+        <Route
+          exact
+          path="/search"
+          render={renderProps => {
+            return <SearchPage {...renderProps} />;
           }}
         />
       </main>

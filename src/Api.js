@@ -7,6 +7,7 @@ class Api {
     this.login = `${this.root}/login`;
     this.tweepRoot = `/tweeps`;
     this.commentRoot = `/comments`;
+    this.search = `${this.root}/searchUsers`
 
   }
 
@@ -22,6 +23,13 @@ class Api {
     return X.post(this.login, obj);
   }
   //asdf
+
+  searchUsers=(user)=>{
+    user = {handle: user};
+    console.log(user);
+    return X.post(this.search,user);
+  }
+
   createUser=(user)=>{
     return X.post(this.userRoot,user);
   }
@@ -74,11 +82,7 @@ class Api {
   }
 
   deleteTweep=(handle, tweepId)=>{
-    let path = `
-    ${this.getUserPath(handle)}
-    ${this.tweepRoot}/
-    ${tweepId}
-    `;
+    let path = `${this.getUserPath(handle)}${this.tweepRoot}/${tweepId}`;
     console.log(path);
     return X.delete(
       path
@@ -136,5 +140,6 @@ class Api {
   }
 
 }
+
 
 export default Api;

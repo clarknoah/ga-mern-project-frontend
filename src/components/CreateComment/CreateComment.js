@@ -13,7 +13,8 @@ class CreateComment extends Component{
       classList: "CreateComment",
       newComment:"",
       user:props.user,
-      tweep:props.tweep
+      tweep:props.tweep,
+      authorHandle:props.authorHandle
     };
   }
 
@@ -32,9 +33,12 @@ class CreateComment extends Component{
   }
 
   submitComment=(evt)=>{
+    let activeUser = localStorage.getItem('activeUser');
+    console.log(activeUser);
     let comment = {
       commentContent: this.state.newComment,
-      timestamp: new Date()
+      timestamp: new Date(),
+      authorHandle:activeUser
     }
     let handle = this.state.user.handle;
     let tweep = this.state.tweep._id;

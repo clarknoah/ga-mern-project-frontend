@@ -34,6 +34,7 @@ class UserLogin extends Component {
       .loginUser(this.state.handle, this.state.password)
       .then(res => {
         if (res.data[0] !== undefined) {
+          localStorage.setItem('activeUser', res.data[0].handle);
           console.log(res.data[0]);
           this.goToProfile(res.data[0]);
           this.setState({
@@ -49,6 +50,7 @@ class UserLogin extends Component {
   };
 
   logout = () => {
+    localStorage.removeItem('activeUser');
     this.setState({
       loggedIn: false
     });

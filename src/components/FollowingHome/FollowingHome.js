@@ -12,7 +12,8 @@ let api = new Api();
 class FollowingHome extends Component{
   constructor(props){
     super(props);
-    let user = props.location.state.data;
+    console.log(props);
+    let user = props.location.state;
     let tweeps = user.tweeps;
     delete user.tweeps;
 

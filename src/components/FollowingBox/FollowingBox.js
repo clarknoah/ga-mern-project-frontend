@@ -2,7 +2,9 @@
 import React from 'react';
 import "./FollowingBox.css";
 import {withRouter} from "react-router-dom";
+import Api from "../../Api.js";
 
+let api = new Api();
 
 const FollowingBox = (props) => {
   let classList = `FollowingBox`;
@@ -10,9 +12,16 @@ const FollowingBox = (props) => {
 
   let following = props.following.map(val=>{
       return <div onClick={()=>{
-        props.history.push({
-          pathname:"/user/"+val
-        })
+        api.readUser(val)
+          .then(result=>{
+            console.log(result);
+            let data = result.data[0];
+            
+            props.history.push({
+              pathname:"/user/"+val,
+              state:result.data[0]
+            })
+          })
       }} className={"FollowingUser"}>{val}</div>
   })
 

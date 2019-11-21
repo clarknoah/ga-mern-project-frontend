@@ -4,19 +4,23 @@ import "./ReadTweep.css";
 import ReadComment from "../ReadComment/ReadComment";
 import CreateComment from "../CreateComment/CreateComment";
 import Api from "../../Api";
+import {withRouter} from "react-router-dom";
 let api = new Api();
 class ReadTweep extends Component{
   constructor(props){
-    super();
+    super(props);
     let tweep = props.tweep;
     let date = new Date(tweep.timestamp);
     tweep.timestamp = this.formatDate(date);
     let comments = this.sortByDate(tweep.comments);
+    let currentUser = localStorage.getItem("activeUser")
     this.state = {
       classList: "ReadTweep",
       tweep:props.tweep,
       user: props.user,
-      comments:comments
+      comments:comments,
+      key:props.keys,
+      author: currentUser === props.tweep.authorHandle
     };
   }
 
@@ -62,6 +66,19 @@ formatDate=(date)=>{
 
   }
 
+  deleteTweep=()=>{
+
+    let handle = this.state.tweep.authorHandle;
+    let tweepId = this.state.tweep._id;
+    let currentUser = localStorage.getItems("activeUser");
+
+
+    api.deleteTweep(handle, tweepId)
+      .then(res=>{
+        console.log(res);
+        this.props.delete(tweepId)
+      })
+  }
 
 
   componentDidMount(){}
@@ -82,6 +99,8 @@ formatDate=(date)=>{
           <h6>{this.state.user.handle}| {`${this.state.tweep.timestamp} `}</h6>
         </div>
         <p>{this.state.tweep.tweepContent}</p>
+        {this.state.author ? <button onClick={this.deleteTweep} >Delete</button> : <div/> }
+
         {comments}
         <CreateComment
           commentCreated={this.commentCreated}
@@ -92,4 +111,4 @@ formatDate=(date)=>{
   }
 }
 
-export default ReadTweep;
+export default withRouter(ReadTweep);

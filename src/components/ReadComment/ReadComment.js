@@ -35,7 +35,7 @@ class ReadComment extends Component{
   render(){
     return(
       <div className={this.state.classList}>
-        <div><h6>{this.state.comment.authorId}| {`${this.state.comment.timestamp} `}</h6></div>
+        <div><h6>{this.state.comment.authorHandle}| {`${this.state.comment.timestamp} `}</h6></div>
         {this.state.comment.commentContent}
       </div>
     );

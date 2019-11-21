@@ -3,24 +3,33 @@ import "./TweepStream.css";
 import CreateTweep from "../CreateTweep/CreateTweep";
 import ReadTweep from "../ReadTweep/ReadTweep";
 import Api from "../../Api";
+import {withRouter} from "react-router-dom";
 let api = new Api();
-
 
 
 class TweepStream extends Component{
   constructor(props){
     super(props);
     let tweeps = this.sortByDate(props.tweeps);
-    console.log(tweeps);
+
+    console.log(window.location.href.toString().match("user"));
     this.state = {
       classList: "TweepStream",
       tweeps: tweeps,
-      user: props.user
+      user: props.user,
+      create:true
     };
   }
 
 
-  componentDidMount() {}
+  componentDidMount() {
+    if(window.location.href.toString().match("user")){
+      console.log("contains it");
+      this.setState({
+        create:false
+      })
+    }
+  }
   sortByDate = (arr)=>{
     arr = arr.sort((a,b)=>{
        a = new Date(a.timestamp);
@@ -43,19 +52,32 @@ class TweepStream extends Component{
       })
   }
 
+  tweepDeleted=(tweepId)=>{
+    console.log("tweepDeleted");
+    let tweeps = this.state.tweeps.filter((tweep)=>{
+      return tweep._id!==tweepId;
+    })
+    console.log(tweeps);
+    this.setState({
+      tweeps:tweeps
+    })
+  }
+
   componentDidUpdate() {}
 
   componentWillUnmount() {}
 
 
   render(){
-    let tweeps =  this.state.tweeps.map(val=>{
-      return <ReadTweep key={val._id} user={this.state.user} tweep={val} />
+    console.log("Rendering Tweep STream");
+    let tweeps =  this.state.tweeps.map((val)=>{
+      return <ReadTweep delete={this.tweepDeleted} key={val._id} user={this.state.user} tweep={val} />
     });
+    let create = this.state.create ? <CreateTweep create={this.state.create} user={this.state.user} tweepCreated={this.tweepCreated}/> : <div></div>;
     return (
       <div className={this.state.classList}>
         <div className={"createTweepContainer"}>
-          <CreateTweep user={this.state.user} tweepCreated={this.tweepCreated}/>
+         {create}
         </div>
 
         <div className={"readTweepsContainer"}>{tweeps}</div>

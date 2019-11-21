@@ -33,7 +33,8 @@ class CreateTweep extends Component{
     let handle = this.state.user.handle;
     let tweep = {
       tweepContent:this.state.newTweep,
-      timestamp:new Date()
+      timestamp:new Date(),
+      authorHandle: this.state.user.handle
     }
     api.createTweep(handle,tweep)
       .then(res=>{

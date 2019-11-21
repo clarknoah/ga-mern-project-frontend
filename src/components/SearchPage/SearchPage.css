@@ -1,0 +1,32 @@
+
+.SearchPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items:center;
+}
+
+.UserResults {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+
+.TweepResults {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+
+.UserLink {
+  cursor: pointer;
+  margin: 10px;
+}
