@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
+
 /* .ReadComment {
   border: 1px solid grey;
   display: flex;
@@ -20,8 +22,17 @@
   /* margin: 5px; */
   padding: 5px;
   align-self: flex-end;
-  width: 60%;
+  width: 50%;
   background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.comment-header {
+  font-family: Alata, sans-serif;
+  font-size: 12px;
+  align-self: flex-end;
+  width: 100%;
 }
 
 .delete-button-comment {

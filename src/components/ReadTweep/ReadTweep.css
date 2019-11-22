@@ -9,7 +9,7 @@
   /* margin-right: 10px; */
   border-bottom: 4px solid #e1eef6f6;
   padding: 10px auto 30px auto;
-  width: 80%;
+  width: 100%;
 }
 
 .tweepHeader {
@@ -35,13 +35,12 @@ p {
 .tweep-content {
   font-family: Arial, sans-serif;
   padding: 10px 5px;
-  background-color: whitesmoke;
   width: 100%;
-  border: 1px solid grey;
-  margin: 10px 0;
+  margin: 10px 13px;
   font-size: 15px;
   height: 100%;
   display: flex;
+  box-sizing: border-box;
 }
 
 .tweep-delete-button {
@@ -49,16 +48,21 @@ p {
   width: 20px;
   height: 20px;
   background-position: center;
+  align-self: flex-end;
+  border-style: none;
 }
 
 .delete-button {
   background: none;
-  align-self: flex-end;
+  display: flex;
   border-style: none;
   background-repeat: no-repeat;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .tweep-delete-button:hover {
   cursor: pointer;
   background-image: url("../../trashcanhover.png");
+  
 }

@@ -120,18 +120,20 @@ class ReadTweep extends Component {
     });
     return (
       <div className={this.state.classList}>
-        <div className="tweepHeader">
-          <h6 className="handle-info">
-            @{this.state.user.handle} | {`${this.state.tweep.timestamp} `}
-          </h6>
-        </div>
-        <p className="tweep-content">{this.state.tweep.tweepContent}</p>
+        <div className="tweep-header-content">
+          <div className="tweepHeader">
+            <h6 className="handle-info">
+              @{this.state.user.handle} | {`${this.state.tweep.timestamp} `}
+            </h6>
+          </div>
+          <p className="tweep-content">{this.state.tweep.tweepContent}</p>
 
-        {this.state.author ? (
-          <button onClick={this.deleteTweep}><div className="tweep-delete-button"></div></button>
-        ) : (
-            <div />
-          )}
+          {this.state.author ? (
+            <button className="delete-button" onClick={this.deleteTweep}><div className="tweep-delete-button"></div></button>
+          ) : (
+              <div />
+            )}
+        </div>
 
         {comments}
         <CreateComment

@@ -56,8 +56,8 @@ class CreateComment extends Component {
       <div className={this.state.classList}>
         {/* <div className="text-and-button"> */}
         <textarea
-          rows="1.5"
-          cols="28"
+          rows="2.5"
+          cols="30"
           maxlength="255"
           value={this.state.newComment}
           onChange={this.updateValue}

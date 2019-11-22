@@ -1,38 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
-
-.ProfileHome {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.profile-left-side {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.FollowingContainer {
-  font-family: "Alata", sans-serif;
-}
-
-.TweepStreamContainer {
-  height: 100%;
-  box-sizing: border-box;
-  overflow: scroll;
-  padding: 2px;
-}
-
-@media only screen and (max-width: 700px) {
-  .ProfileHome {
-    display: flex;
-    flex-direction: column;
-  }
-} */
-
 @import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
 
 .ProfileHome {
@@ -62,6 +27,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.tweep-header-content {
+  width: 100%;
+  border: solid 1px grey;
+  margin: 10px 0;
+  background-color: whitesmoke;
 }
 
 @media only screen and (max-width: 700px) {
