@@ -2,20 +2,22 @@
 import React, {Component} from 'react';
 import "./SearchPage.css";
 import {withRouter} from "react-router-dom";
+import Api from "../../Api";
+let api = new Api();
 class SearchPage extends Component{
   constructor(props){
     super(props);
-    console.log(this.props.location.state.data);
     let caretTags = this.props.location.state.data.caretTags;
     let userTags = this.props.location.state.data.userTags;
+    let tweeps = this.props.location.state.data.tweeps;
     this.state = {
       classList: "SearchPage",
-      tweeps: this.props.location.state.data.tweeps,
+      tweeps: this.parseTags(tweeps),
       users: this.props.location.state.data.users,
       caretTags:this.parseTags(caretTags),
       userTags: this.parseTags(userTags)
     };
-    console.log(this.state.caretTags);
+    console.log(this.state);
   }
 
   componentDidMount(){}
@@ -41,20 +43,32 @@ class SearchPage extends Component{
     let name = evt.target.innerText;
     console.log(evt.target.getAttribute("name"));
     let key = evt.target.getAttribute("name");
-    console.log(this.state.users[key]);
-    this.props.history.push({
-      pathname:`/user/${name}`,
-      state: this.state.users[key]
-    })
+    api.readUser(key)
+      .then(res=>{
+        console.log(res);
+        this.props.history.push({
+          pathname:`/user/${name}`,
+          state: res.data[0]
+        })
+      })
+
   }
 
   render(){
     let users = this.state.users.map((val,key)=>{
-      return <div name={key}
+      return <div name={val.handle}
       onClick={this.goToUserPage}
       className={"UserLink"}>
         {val.handle}
       </div>
+    })
+    let tweeps = this.state.tweeps.map((val,key)=>{
+      return (
+        <div className={"CaretResult"}>
+          <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
+          <div> | </div>
+          <div>{val.tweepContent}</div>
+       </div>)
     })
 
     let caretTags = this.state.caretTags.map((val,key)=>{
@@ -84,6 +98,7 @@ class SearchPage extends Component{
         </div>
         <div className={"UserReults"}>
           <h4>Tweeps</h4>
+          {tweeps}
         </div>
         <div className={"CaretReults"}>
           <h4>CaretTags</h4>
