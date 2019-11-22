@@ -58,16 +58,20 @@ class SearchPage extends Component{
     })
 
     let caretTags = this.state.caretTags.map((val,key)=>{
-      return <div className={"CaretResult"}>
-        <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
-        <div>| {val.tweepContent}</div>
-       </div>
+      return (
+        <div className={"CaretResult"}>
+          <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
+          <div> | </div>
+          <div>{val.tweepContent}</div>
+       </div>)
     })
     let userTags = this.state.userTags.map((val,key)=>{
-      return <div className={"CaretResult"}>
-        <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
-        <div>| {val.tweepContent}</div>
-       </div>
+      return (
+        <div className={"CaretResult"}>
+          <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
+          <div>|</div>
+          <div>{val.tweepContent}</div>
+       </div>)
     })
 
 
