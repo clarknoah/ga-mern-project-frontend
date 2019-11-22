@@ -13,30 +13,59 @@ class UserInfo extends Component {
       firstName: props.firstName,
       handle: props.handle,
       lastName: props.lastName,
-      description: props.description
+      description: props.description,
+      user: props,
+      activeUser: localStorage.getItem("activeUser")
+    }
+  }
+
+  alreadyFollowing=(handle)=>{
+    let following = localStorage.getItem('following');
+    if(following!==null){
+      return following.includes(handle);
     }
   }
 
   followUser=()=>{
-    this.setState({
-      following: true
-    })
+    console.log("Follow");
+    api.followUser(this.state.handle)
+      .then(res=>{
+        let following = localStorage.getItem('following');
+        following = following.split(',');
+        following.push(this.state.handle);
+        localStorage.setItem('following', following);
+        this.setState({
+          following: true
+        })
+      })
   }
 
-  unFollowUser=()=>{
-    this.setState({
-      following: false
-    })
+  unfollowUser=()=>{
+    console.log("UnFollow");
+    api.unfollowUser(this.state.handle)
+      .then(req=>{
+      let following = localStorage.getItem('following');
+      following = following.split(',');
+      console.log(following);
+       let newfollow = following.filter(val=>val!==this.state.handle);
+        localStorage.setItem('following', newfollow);
+        this.setState({
+          following: false
+        })
+      }
+      )
   }
 
   render(){
+    let currentUser = this.state.activeUser === this.state.handle;
     let follow = <button onClick={this.followUser}>Follow</button>;
     let unfollow  = <button onClick={this.unfollowUser}>Unfollow</button>
-    let display = this.state.following ? unfollow : follow;
+    let display = this.alreadyFollowing(this.state.handle) ? unfollow : follow;
+    let reallyDisplay = currentUser ? <div/> : display;
     return (
       <div className={this.state.classList}>
 
-        {display}
+        {reallyDisplay}
 
         <h3>
           {this.state.firstName} {this.state.lastName}

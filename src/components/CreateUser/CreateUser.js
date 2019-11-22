@@ -3,7 +3,7 @@ import "./CreateUser.css";
 import Input from "../Form/Form.js";
 import Api from "../../Api.js";
 import { withRouter } from "react-router-dom";
-
+import Utils from "../../utilities.js";
 let api = new Api();
 
 class CreateUser extends Component {
@@ -43,6 +43,7 @@ class CreateUser extends Component {
 
     api.createUser(user).then(res => {
       console.log(res.data);
+    //  Utils.setActiveUser(res.data.handle)
       this.props.history.push({
         pathname: `/home`,
         state: { data: res.data }

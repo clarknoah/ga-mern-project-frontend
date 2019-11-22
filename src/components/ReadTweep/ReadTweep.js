@@ -21,6 +21,7 @@ class ReadTweep extends Component {
       comments: comments,
       author: currentUser === props.tweep.authorHandle
     };
+    console.log(this.state);
   }
 
   sortByDate = arr => {
@@ -104,6 +105,7 @@ class ReadTweep extends Component {
 
   render() {
     let comments = this.state.comments.map(val => {
+      console.log(val);
       return (
         <ReadComment
           tweepId={this.state.tweep._id}

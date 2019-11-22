@@ -8,6 +8,11 @@ class Api {
     this.tweepRoot = `/tweeps`;
     this.commentRoot = `/comments`;
     this.search = `${this.root}/searchUsers`
+    let path = window.location.href;
+    if(path.includes("netlify")){
+      this.root = "https://tweeper-backend.herokuapp.com/"
+    }
+    console.log(window.location.href);
 
   }
 
@@ -32,6 +37,7 @@ class Api {
 
   followUser=(user)=>{
     if(localStorage.getItem('activeUser')){
+      console.log("creating foloo");
       let activeUser = localStorage.getItem('activeUser');
       let body = {follow:user};
       return X.post(`${this.userRoot}/${activeUser}/follow`,body);
@@ -42,7 +48,7 @@ class Api {
     if(localStorage.getItem('activeUser')){
       let body = {unfollow:user};
       let activeUser = localStorage.getItem('activeUser');
-      return X.post(`${this.root}/${activeUser}/unfollow`,body);
+      return X.post(`${this.userRoot}/${activeUser}/unfollow`,body);
     }
   }
   createUser=(user)=>{

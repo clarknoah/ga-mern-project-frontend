@@ -4,12 +4,13 @@ import Api from "../../Api";
 import UserInfo from "../UserInfo/UserInfo.js";
 import TweepStream from "../TweepStream/TweepStream";
 import FollowingBox from "../FollowingBox/FollowingBox";
-
+import {withRouter} from "react-router-dom";
 let api = new Api();
 
 class ProfileHome extends Component {
   constructor(props) {
     super(props);
+    
     let user = props.location.state.data;
     let tweeps = user.tweeps;
     delete user.tweeps;
@@ -51,4 +52,4 @@ class ProfileHome extends Component {
   }
 }
 
-export default ProfileHome;
+export default withRouter(ProfileHome);
