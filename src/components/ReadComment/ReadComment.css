@@ -1,9 +1,12 @@
-
 .ReadComment {
-  border: 1px solid green;
+  border: 1px solid grey;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 25px;
+  margin: 5px;
+  padding: 5px;
+  align-self: flex-end;
+  width: 60%;
+  background-color: whitesmoke;
 }

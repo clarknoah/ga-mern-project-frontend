@@ -9,7 +9,7 @@ import UserLogin from "./components/UserLogin/UserLogin.js";
 import FollowingHome from "./components/FollowingHome/FollowingHome";
 import SearchPage from "./components/SearchPage/SearchPage";
 import SearchBox from "./components/SearchBox/SearchBox";
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 let RootRoute = (
   <Route
     path="/"
@@ -19,8 +19,8 @@ let RootRoute = (
   />
 );
 function App() {
-  let userLoggedIn = localStorage.getItem('activeUser')!==null;
-  let searchBox = userLoggedIn ? <SearchBox/> : <div/>;
+  let userLoggedIn = localStorage.getItem("activeUser") !== null;
+  let searchBox = userLoggedIn ? <SearchBox /> : <div />;
   return (
     <div className="App">
       <header>
@@ -46,7 +46,6 @@ function App() {
               return <Home />;
             }}
           />
-
         <Route
           exact={true}
           path="/createUser"
