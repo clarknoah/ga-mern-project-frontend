@@ -59,34 +59,27 @@ A Twitter like clone application with the ability to read, create, delete and up
 
 ## Installing
 
-```
-Give the example
-```
+Backend: https://github.com/clarknoah/ga-mern-project-backend
+
+- Install MongoDB 
+- Run MongoDB 
+- Seed backend server data
+
+
+Frontend: https://github.com/clarknoah/ga-mern-project-frontend
+
+- Git clone
+- npm install
+- npm run Start
 
 
 ## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+- npm test
 
 ## Deployment
 
-- Deployed using .......
+Front end: Netlify
+https://cranky-sammet-bc7140.netlify.com/
 
 
 ## Authors

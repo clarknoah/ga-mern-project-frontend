@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import "./Home.css";
 import CreateUser from "../CreateUser/CreateUser";
@@ -63,7 +62,6 @@ class Home extends Component {
             <div />
           )}
         {this.state.showCreateUser ? <CreateUser /> : <div />}
-
       </div>
     );
   }

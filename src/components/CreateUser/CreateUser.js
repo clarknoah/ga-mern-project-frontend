@@ -43,7 +43,7 @@ class CreateUser extends Component {
 
     api.createUser(user).then(res => {
       console.log(res.data);
-      //  Utils.setActiveUser(res.data.handle)
+      Utils.setActiveUser(res.data.handle);
       this.props.history.push({
         pathname: `/home`,
         state: { data: res.data }

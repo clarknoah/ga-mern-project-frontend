@@ -22,9 +22,23 @@ class UserLogin extends Component {
 
   componentDidMount() {}
 
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    console.log("Login is Updating");
+    this.updateLogin();
+
+  }
 
   componentWillUnmount() {}
+
+  updateLogin=()=>{
+    let user = Utils.getActiveUser();
+    if(user&&this.state.loggedIn===false){
+      this.setState({
+        loggedIn: true
+      });
+    }
+  }
+
 
   updateValue = evt => {
     let name = evt.target.name;
