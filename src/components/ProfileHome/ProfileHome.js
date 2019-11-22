@@ -10,7 +10,7 @@ let api = new Api();
 class ProfileHome extends Component {
   constructor(props) {
     super(props);
-    
+
     let user = props.location.state.data;
     let tweeps = user.tweeps;
     delete user.tweeps;
@@ -39,14 +39,12 @@ class ProfileHome extends Component {
           {/* <div className="profile-picture"></div> */}
           <div id="UserInfoContainer" className={"UserInfoContainer"}>
             <UserInfo {...this.state.userInfo} />
-          </div>
-          <div id="FollowingContainer" className={"FollowingContainer"}>
             <FollowingBox following={this.state.userInfo.following} />
           </div>
         </div>
-        <div id="TweepStreamContainer" className={"TweepStreamContainer"}>
+
           <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps} />
-        </div>
+
       </div>
     );
   }
