@@ -2,7 +2,7 @@ import X from 'axios';
 
 class Api {
   constructor(){
-    this.root = "http://localhost:5555";
+    this.root = "https://tweeper-backend.herokuapp.com";
     this.userRoot = `${this.root}/user`;
     this.login = `${this.root}/login`;
     this.tweepRoot = `/tweeps`;
@@ -32,6 +32,7 @@ class Api {
 
   followUser=(user)=>{
     if(localStorage.getItem('activeUser')){
+      console.log("creating foloo");
       let activeUser = localStorage.getItem('activeUser');
       let body = {follow:user};
       return X.post(`${this.userRoot}/${activeUser}/follow`,body);
@@ -42,7 +43,7 @@ class Api {
     if(localStorage.getItem('activeUser')){
       let body = {unfollow:user};
       let activeUser = localStorage.getItem('activeUser');
-      return X.post(`${this.root}/${activeUser}/unfollow`,body);
+      return X.post(`${this.userRoot}/${activeUser}/unfollow`,body);
     }
   }
   createUser=(user)=>{

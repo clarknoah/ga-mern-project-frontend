@@ -40,6 +40,7 @@ class UserLogin extends Component {
           localStorage.setItem('activeUser', res.data[0].handle);
           console.log(res.data[0]);
           this.goToProfile(res.data[0]);
+          this.setFollowing(res.data[0].following);
           this.setState({
             loggedIn: true
           });
@@ -52,8 +53,18 @@ class UserLogin extends Component {
       });
   };
 
+  setFollowing=(following)=>{
+    localStorage.setItem("following",following);
+    console.log(localStorage.getItem('following'));
+  }
+
+  unsetFollowing=()=>{
+    localStorage.removeItem("following")
+  }
+
   logout = () => {
     localStorage.removeItem('activeUser');
+    this.unsetFollowing();
     this.setState({
       loggedIn: false
     });
