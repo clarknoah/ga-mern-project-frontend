@@ -27,16 +27,14 @@ function App() {
         <div className="header-space">
           <div className="h1-and-icon">
             <div className="icon"></div>
-            <h1 className="header-tweeper">
+            <h1>
               <Link exact={true} to="/" className="h1">
                 Tweeper
               </Link>
             </h1>
           </div>
-          <div className="header-right">
-            {searchBox}
-            <UserLogin />
-          </div>
+          {searchBox}
+          <UserLogin />
         </div>
       </header>
       <section>
