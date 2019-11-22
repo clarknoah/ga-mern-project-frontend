@@ -1,17 +1,11 @@
 
 import React, { Component } from 'react';
 import "./SearchPage.css";
-<<<<<<< HEAD
-import { withRouter } from "react-router-dom";
-class SearchPage extends Component {
-  constructor(props) {
-=======
 import {withRouter} from "react-router-dom";
 import Api from "../../Api";
 let api = new Api();
 class SearchPage extends Component{
   constructor(props){
->>>>>>> 2d86394b9478ed52af0e608b37e4d3ca51bb724e
     super(props);
     let caretTags = this.props.location.state.data.caretTags;
     let userTags = this.props.location.state.data.userTags;
