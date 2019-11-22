@@ -69,7 +69,7 @@ class FollowingHome extends Component{
   componentWillUnmount(){}
 
   render(){
-
+    console.log(this.state.userInfo, this.state.tweeps);
     return(
       <div className={this.state.classList}>
       <div id="UserInfoContainer" className={"UserInfoContainer"}>

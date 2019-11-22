@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import "./Home.css";
 import CreateUser from "../CreateUser/CreateUser";
@@ -60,7 +59,7 @@ class Home extends Component{
             </button>
           </div>
         ) : (
-          <div />
+          <div/>
         )}
 
 
