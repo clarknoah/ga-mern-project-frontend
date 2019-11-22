@@ -44,7 +44,7 @@
 
 .login-button:hover {
   background: white;
-  color: #0a7aa6;
+  color: black;
   border: solid #0a7aa6 1.5px;
 }
 
@@ -52,4 +52,10 @@
   /* margin: 10px; */
   font-weight: 500;
   font-family: Alata, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .logged-in-as {
+    display: none;
+  }
 }

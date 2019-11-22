@@ -4,9 +4,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 5px;
+  /* margin: 5px; */
   padding: 5px;
   align-self: flex-end;
   width: 60%;
   background-color: whitesmoke;
+}
+
+.delete-button-comment {
+  background: none;
+  align-self: flex-end;
+  border-style: none;
+  background-repeat: no-repeat;
 }
