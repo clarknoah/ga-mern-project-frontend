@@ -62,8 +62,7 @@ class Home extends Component{
         ) : (
           <div />
         )}
-
-
+        {this.state.showCreateUser ? <CreateUser /> : <div />}
       </div>
     );
   }
