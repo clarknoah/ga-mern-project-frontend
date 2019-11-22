@@ -57,7 +57,7 @@ class ReadComment extends Component {
     return (
       <div className={this.state.classList}>
         <div>
-          <h6>
+          <h6 className="comment-header">
             {this.state.comment.authorHandle}|{" "}
             {`${this.state.comment.timestamp} `}
           </h6>
