@@ -50,8 +50,8 @@ class CreateTweep extends Component {
         <div className="create-tweep">
           Create a new Tweep!
           <textarea
-            rows="4"
-            cols="30"
+            rows="5"
+            cols="50"
             value={this.state.newTweep}
             onChange={this.updateValue}
           ></textarea>
