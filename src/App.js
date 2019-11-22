@@ -44,41 +44,41 @@ function App() {
           <Route
             exact={true}
             path="/"
-            render={() => {
+            component={() => {
               return <Home />;
             }}
           />
-          <Route
-            exact={true}
-            path="/createUser"
-            render={() => {
-              return <CreateUser />;
-            }}
-          />
-          <Route
-            exact
-            path="/home"
-            render={renderProps => {
-              return <ProfileHome {...renderProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/user/:handle"
-            component={renderProps => {
-              console.log("I am secret");
-              console.log(renderProps);
-              return <FollowingHome {...renderProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/search"
-            render={renderProps => {
-              return <SearchPage {...renderProps} />;
-            }}
-          />
-        </main>
+        <Route
+          exact={true}
+          path="/createUser"
+          component={() => {
+            return <CreateUser />;
+          }}
+        />
+        <Route
+          exact
+          path="/home"
+          component={renderProps => {
+            return <ProfileHome {...renderProps} />;
+          }}
+        />
+        <Route
+          exact
+          path="/user/:handle"
+          component={renderProps => {
+            console.log("I am secret");
+            console.log(renderProps);
+            return <FollowingHome {...renderProps} />;
+          }}
+        />
+        <Route
+          exact
+          path="/search"
+          component={renderProps => {
+            return <SearchPage {...renderProps} />;
+          }}
+        />
+      </main>
       </section>
       <footer></footer>
     </div>

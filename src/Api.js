@@ -2,17 +2,18 @@ import X from 'axios';
 
 class Api {
   constructor(){
-    this.root = "http://localhost:5555";
+    let path = window.location.href;
+    if(path.includes("netlify")){
+      this.root = "https://tweeper-backend.herokuapp.com/"
+    }else if(path.includes("localhost")){
+      this.root = "http://localhost:5555";
+    }
+
     this.userRoot = `${this.root}/user`;
     this.login = `${this.root}/login`;
     this.tweepRoot = `/tweeps`;
     this.commentRoot = `/comments`;
     this.search = `${this.root}/searchUsers`
-    let path = window.location.href;
-    if(path.includes("netlify")){
-      this.root = "https://tweeper-backend.herokuapp.com/"
-    }
-    console.log(window.location.href);
 
   }
 
