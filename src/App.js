@@ -9,6 +9,7 @@ import UserLogin from "./components/UserLogin/UserLogin.js";
 import FollowingHome from "./components/FollowingHome/FollowingHome";
 import SearchPage from "./components/SearchPage/SearchPage";
 import SearchBox from "./components/SearchBox/SearchBox";
+import { Redirect } from 'react-router-dom'
 import { withRouter } from "react-router-dom";
 let RootRoute = (
   <Route
@@ -59,7 +60,9 @@ function App() {
             exact
             path="/home"
             component={renderProps => {
-              return <ProfileHome {...renderProps} />;
+              console.log(renderProps);
+              let display = renderProps.location.state===undefined ? <Redirect to="/"/> :<ProfileHome {...renderProps} />;
+              return display;
             }}
           />
           <Route
