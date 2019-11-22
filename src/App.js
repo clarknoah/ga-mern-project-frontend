@@ -42,21 +42,21 @@ function App() {
           <Route
             exact={true}
             path="/"
-            render={() => {
+            component={() => {
               return <Home />;
             }}
           />
         <Route
           exact={true}
           path="/createUser"
-          render={() => {
+          component={() => {
             return <CreateUser />;
           }}
         />
         <Route
           exact
           path="/home"
-          render={renderProps => {
+          component={renderProps => {
             return <ProfileHome {...renderProps} />;
           }}
         />
@@ -72,7 +72,7 @@ function App() {
         <Route
           exact
           path="/search"
-          render={renderProps => {
+          component={renderProps => {
             return <SearchPage {...renderProps} />;
           }}
         />
