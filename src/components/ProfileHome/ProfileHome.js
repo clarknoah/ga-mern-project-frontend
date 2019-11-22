@@ -4,7 +4,7 @@ import Api from "../../Api";
 import UserInfo from "../UserInfo/UserInfo.js";
 import TweepStream from "../TweepStream/TweepStream";
 import FollowingBox from "../FollowingBox/FollowingBox";
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 let api = new Api();
 
 class ProfileHome extends Component {
@@ -28,9 +28,9 @@ class ProfileHome extends Component {
     console.log("ProfileHome Mounted");
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() { }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     return (
@@ -42,8 +42,11 @@ class ProfileHome extends Component {
             <FollowingBox following={this.state.userInfo.following} />
           </div>
         </div>
-
+        <div className="TweepSteamContainer" >
           <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps} />
+        </div>
+
+
 
       </div>
     );

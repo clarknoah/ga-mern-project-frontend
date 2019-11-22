@@ -1,56 +1,63 @@
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import "./SearchBox.css";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import Api from "../../Api.js";
 let api = new Api();
 
-class SearchBox extends Component{
-  constructor(props){
+class SearchBox extends Component {
+  constructor(props) {
     super(props);
     console.log(props);
     this.state = {
       classList: "SearchBox",
-      search:""
+      search: ""
     };
   }
 
-  componentDidMount(){}
+  componentDidMount() { }
 
-  componentDidUpdate(){}
+  componentDidUpdate() { }
 
-  componentWillUnmount(){}
+  componentWillUnmount() { }
 
-  updateValue=(evt)=>{
+  updateValue = (evt) => {
     this.setState({
-      search:evt.target.value
+      search: evt.target.value
     })
   }
 
-  submitSearch=()=>{
+  submitSearch = () => {
     let user = this.state.search;
     console.log(user);
     api.searchUsers(user)
-      .then(res=>{
+      .then(res => {
         console.log(res.data);
         this.goToSearchPage(res.data);
       })
 
   }
 
-  goToSearchPage=(data)=>{
+  goToSearchPage = (data) => {
     this.props.history.push({
       pathname: `/search`,
       state: { data: data }
     });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className={this.state.classList}>
-        <input onChange={this.updateValue} type="text" value={this.state.search} ></input>
-        <button onClick={this.submitSearch}>Search</button>
+        <input
+          onChange={this.updateValue}
+          type="text"
+          value={this.state.search}
+          className="search-input"
+        ></input>
+        <button className="search-button" onClick={this.submitSearch}>
+          Search
+        </button>
       </div>
     );
   }

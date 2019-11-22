@@ -70,7 +70,7 @@ class ReadTweep extends Component {
     });
   };
 
-  updateTweep = () => {};
+  updateTweep = () => { };
 
   deleteTweep = () => {
     let handle = this.state.tweep.authorHandle;
@@ -83,9 +83,9 @@ class ReadTweep extends Component {
     });
   };
 
-  updateTweep = () => {};
+  updateTweep = () => { };
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   componentDidUpdate() {
     console.log("Read Tweep Updated");
@@ -101,7 +101,7 @@ class ReadTweep extends Component {
     });
   };
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     let comments = this.state.comments.map(val => {
@@ -125,10 +125,10 @@ class ReadTweep extends Component {
         <p className="tweep-content">{this.state.tweep.tweepContent}</p>
 
         {this.state.author ? (
-          <button onClick={this.deleteTweep}>Delete</button>
+          <button onClick={this.deleteTweep}><div className="tweep-delete-button"></div></button>
         ) : (
-          <div />
-        )}
+            <div />
+          )}
 
         {comments}
         <CreateComment

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
 
 .ProfileHome {
   height: 100%;
@@ -20,6 +20,40 @@
 }
 
 .TweepStreamContainer {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: scroll;
+  padding: 2px;
+}
+
+@media only screen and (max-width: 700px) {
+  .ProfileHome {
+    display: flex;
+    flex-direction: column;
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
+
+.ProfileHome {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.profile-left-side {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.FollowingContainer {
+  font-family: "Alata", sans-serif;
+}
+
+.TweepStreamContainer {
+  border: 1px solid grey;
   height: 100%;
   box-sizing: border-box;
   overflow: scroll;

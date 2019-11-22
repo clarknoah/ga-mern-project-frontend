@@ -17,13 +17,13 @@ class CreateComment extends Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   componentDidUpdate() {
     console.log("Create Comment Updated");
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   updateValue = evt => {
     this.setState({

@@ -1,12 +1,12 @@
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import "./ReadComment.css";
 import Api from "../../Api";
 
 const api = new Api();
 
-class ReadComment extends Component{
-  constructor(props){
+class ReadComment extends Component {
+  constructor(props) {
     super(props);
     let comment = props.data;
     let currentUser = localStorage.getItem('activeUser');
@@ -19,7 +19,7 @@ class ReadComment extends Component{
       tweepId: props.tweepId
     };
   }
-  formatDate=(date)=>{
+  formatDate = (date) => {
     var monthNames = [
       "January", "February", "March",
       "April", "May", "June", "July",
@@ -33,18 +33,18 @@ class ReadComment extends Component{
 
     return day + ' ' + monthNames[monthIndex] + ' ' + year;
   }
-  componentDidMount(){}
+  componentDidMount() { }
 
-  componentDidUpdate(){}
+  componentDidUpdate() { }
 
-  componentWillUnmount(){}
+  componentWillUnmount() { }
 
-  deleteComment=()=>{
+  deleteComment = () => {
     let handle = this.state.comment.authorHandle;
     let commentId = this.state.comment._id;
     console.log(handle, commentId);
     api.deleteComment(handle, this.state.tweepId, commentId)
-      .then(res=>{
+      .then(res => {
         console.log("Comment Deleted");
         this.props.delete(commentId);
       })
@@ -53,16 +53,30 @@ class ReadComment extends Component{
 
 
 
-  render(){
-    return(
+  render() {
+    return (
       <div className={this.state.classList}>
-        <div><h6>{this.state.comment.authorHandle}| {`${this.state.comment.timestamp} `}</h6></div>
+        <div>
+          <h6>
+            {this.state.comment.authorHandle}|{" "}
+            {`${this.state.comment.timestamp} `}
+          </h6>
+        </div>
         {this.state.comment.commentContent}
-        {this.state.author ? <button onClick={this.deleteComment}>Delete Comment</button> : <div/>}
-
+        {this.state.author ? (
+          <button
+            className="delete-button-comment"
+            onClick={this.deleteComment}
+          >
+            <div className="tweep-delete-button"></div>
+          </button>
+        ) : (
+            <div />
+          )}
       </div>
     );
   }
 }
+
 
 export default ReadComment;
