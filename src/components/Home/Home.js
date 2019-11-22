@@ -47,7 +47,10 @@ class Home extends Component {
         {this.state.showCreateUser === false ? (
           <div className="welcome-home">
             <h1>Welcome to Tweeper!</h1>
-            <button className="big-red-button" onClick={this.showCreateUser}>
+            <button
+              className="big-red-button first-button"
+              onClick={this.showCreateUser}
+            >
               Create User
             </button>
           </div>
