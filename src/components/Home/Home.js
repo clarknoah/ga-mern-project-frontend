@@ -48,10 +48,21 @@ class Home extends Component{
     this.routeToHome();
     return(
       <div className={this.state.classList}>
-        {this.state.showCreateUser===false ? <button onClick={this.showCreateUser}>Create User</button> : <div/>}
 
+        {this.state.showCreateUser === false ? (
+          <div className="welcome-home">
+            <h1>Welcome to Tweeper!</h1>
+            <button
+              className="big-red-button first-button"
+              onClick={this.showCreateUser}
+            >
+              Create User
+            </button>
+          </div>
+        ) : (
+          <div />
+        )}
 
-        {this.state.showCreateUser ? <CreateUser/> : <div/>}
 
       </div>
     );

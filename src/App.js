@@ -26,8 +26,10 @@ function App() {
       <header>
         <div className="header-space">
           <div className="h1-and-icon">
-            <div className="icon"></div>
-            <h1>
+            <Link exact={true} to="/">
+              <div className="icon"></div>
+            </Link>
+            <h1 className="header-tweeper">
               <Link exact={true} to="/" className="h1">
                 Tweeper
               </Link>
@@ -46,37 +48,37 @@ function App() {
               return <Home />;
             }}
           />
-        <Route
-          exact={true}
-          path="/createUser"
-          component={() => {
-            return <CreateUser />;
-          }}
-        />
-        <Route
-          exact
-          path="/home"
-          component={renderProps => {
-            return <ProfileHome {...renderProps} />;
-          }}
-        />
-        <Route
-          exact
-          path="/user/:handle"
-          component={renderProps => {
-            console.log("I am secret");
-            console.log(renderProps);
-            return <FollowingHome {...renderProps} />;
-          }}
-        />
-        <Route
-          exact
-          path="/search"
-          component={renderProps => {
-            return <SearchPage {...renderProps} />;
-          }}
-        />
-      </main>
+          <Route
+            exact={true}
+            path="/createUser"
+            component={() => {
+              return <CreateUser />;
+            }}
+          />
+          <Route
+            exact
+            path="/home"
+            component={renderProps => {
+              return <ProfileHome {...renderProps} />;
+            }}
+          />
+          <Route
+            exact
+            path="/user/:handle"
+            component={renderProps => {
+              console.log("I am secret");
+              console.log(renderProps);
+              return <FollowingHome {...renderProps} />;
+            }}
+          />
+          <Route
+            exact
+            path="/search"
+            component={renderProps => {
+              return <SearchPage {...renderProps} />;
+            }}
+          />
+        </main>
       </section>
       <footer></footer>
     </div>

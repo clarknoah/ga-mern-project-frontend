@@ -2,3 +2,14 @@
 .Home {
 
 }
+
+.first-button {
+  transition: 0.3s ease-in;
+}
+
+.first-button:hover {
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+  transform: scale(1.1);
+}
