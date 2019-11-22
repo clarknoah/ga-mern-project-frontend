@@ -8,6 +8,11 @@ class Api {
     this.tweepRoot = `/tweeps`;
     this.commentRoot = `/comments`;
     this.search = `${this.root}/searchUsers`
+    let path = window.location.href;
+    if(path.includes("herokuapp")){
+      this.root = "https://tweeper-backend.herokuapp.com/"
+    }
+    console.log(window.location.href);
 
   }
 

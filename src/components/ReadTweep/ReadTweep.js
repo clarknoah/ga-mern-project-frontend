@@ -105,6 +105,7 @@ class ReadTweep extends Component {
 
   render() {
     let comments = this.state.comments.map(val => {
+      console.log(val);
       return (
         <ReadComment
           tweepId={this.state.tweep._id}
