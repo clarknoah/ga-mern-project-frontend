@@ -21,6 +21,7 @@ class ReadTweep extends Component {
       comments: comments,
       author: currentUser === props.tweep.authorHandle
     };
+    console.log(this.state);
   }
 
   sortByDate = arr => {

@@ -4,6 +4,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items:center;
+  width: 100%;
 }
 
 .UserResults {
@@ -26,7 +27,19 @@
 }
 
 
+.CaretResults{
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.CaretResult{
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
 .UserLink {
   cursor: pointer;
-  margin: 10px;
 }
