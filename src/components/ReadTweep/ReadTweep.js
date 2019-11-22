@@ -117,7 +117,7 @@ class ReadTweep extends Component {
       <div className={this.state.classList}>
         <div className="tweepHeader">
           <h6 className="handle-info">
-            {this.state.user.handle}| {`${this.state.tweep.timestamp} `}
+            @{this.state.user.handle} | {`${this.state.tweep.timestamp} `}
           </h6>
         </div>
         <p className="tweep-content">{this.state.tweep.tweepContent}</p>

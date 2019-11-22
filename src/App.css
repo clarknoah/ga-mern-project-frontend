@@ -105,3 +105,9 @@ a {
     display: none;
   }
 }
+
+textarea {
+  border: 1px solid gray;
+  border-radius: 2px;
+  resize: vertical;
+}

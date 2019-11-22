@@ -9,7 +9,7 @@ import UserLogin from "./components/UserLogin/UserLogin.js";
 import FollowingHome from "./components/FollowingHome/FollowingHome";
 import SearchPage from "./components/SearchPage/SearchPage";
 import SearchBox from "./components/SearchBox/SearchBox";
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 let RootRoute = (
   <Route
     path="/"
@@ -19,8 +19,8 @@ let RootRoute = (
   />
 );
 function App() {
-  let userLoggedIn = localStorage.getItem('activeUser')!==null;
-  let searchBox = userLoggedIn ? <SearchBox/> : <div/>;
+  let userLoggedIn = localStorage.getItem("activeUser") !== null;
+  let searchBox = userLoggedIn ? <SearchBox /> : <div />;
   return (
     <div className="App">
       <header>
@@ -47,35 +47,35 @@ function App() {
             }}
           />
 
-        <Route
-          exact={true}
-          path="/createUser"
-          render={() => {
-            return <CreateUser />;
-          }}
-        />
-        <Route
-          exact
-          path="/home"
-          render={renderProps => {
-            return <ProfileHome {...renderProps} />;
-          }}
-        />
-        <Route
-          exact
-          path="/user/:handle"
-          render={renderProps => {
-            return <FollowingHome {...renderProps} />;
-          }}
-        />
-        <Route
-          exact
-          path="/search"
-          render={renderProps => {
-            return <SearchPage {...renderProps} />;
-          }}
-        />
-      </main>
+          <Route
+            exact={true}
+            path="/createUser"
+            render={() => {
+              return <CreateUser />;
+            }}
+          />
+          <Route
+            exact
+            path="/home"
+            render={renderProps => {
+              return <ProfileHome {...renderProps} />;
+            }}
+          />
+          <Route
+            exact
+            path="/user/:handle"
+            render={renderProps => {
+              return <FollowingHome {...renderProps} />;
+            }}
+          />
+          <Route
+            exact
+            path="/search"
+            render={renderProps => {
+              return <SearchPage {...renderProps} />;
+            }}
+          />
+        </main>
       </section>
       <footer></footer>
     </div>

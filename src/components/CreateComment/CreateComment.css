@@ -1,8 +1,17 @@
-
 .CreateComment {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid red;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.submit-comment-button {
+  border-radius: 10px;
+  background-color: rgba(251, 14, 14, 0.9);
+  color: white;
+  font-family: "Alata", sans-serif;
+  width: 12%;
+  font-size: 10px;
+  align-self: center;
 }
