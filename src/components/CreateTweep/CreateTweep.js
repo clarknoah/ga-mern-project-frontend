@@ -31,21 +31,18 @@ class CreateTweep extends Component {
     console.log("Submitting Tweep");
     let handle = this.state.user.handle;
     let tweep = {
-      tweepContent:this.state.newTweep,
-      timestamp:new Date(),
+      tweepContent: this.state.newTweep,
+      timestamp: new Date(),
       authorHandle: this.state.user.handle
-    }
-    api.createTweep(handle,tweep)
-      .then(res=>{
-        this.props.tweepCreated();
-        console.log("Tweep Created");
-        this.setState({
-          newTweep:""
-        });
-      })
-
-  }
-
+    };
+    api.createTweep(handle, tweep).then(res => {
+      this.props.tweepCreated();
+      console.log("Tweep Created");
+      this.setState({
+        newTweep: ""
+      });
+    });
+  };
 
   render() {
     return (
@@ -53,6 +50,8 @@ class CreateTweep extends Component {
         <div className="create-tweep">
           Create a new Tweep!
           <textarea
+            rows="4"
+            cols="30"
             value={this.state.newTweep}
             onChange={this.updateValue}
           ></textarea>
