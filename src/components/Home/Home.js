@@ -1,49 +1,54 @@
-import React, { Component } from "react";
+
+import React, {Component} from 'react';
 import "./Home.css";
 import CreateUser from "../CreateUser/CreateUser";
-import { withRouter } from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import Api from "../../Api";
 const api = new Api();
-class Home extends Component {
-  constructor(props) {
+class Home extends Component{
+  constructor(props){
     super();
     console.log(props);
-    let currentUser = localStorage;
+    let currentUser = localStorage
     this.state = {
       classList: "Home",
-      showCreateUser: false
+      showCreateUser:false
+
     };
   }
 
-  componentDidMount() {}
+  componentDidMount(){}
 
-  componentDidUpdate() {}
+  componentDidUpdate(){}
 
-  componentWillUnmount() {}
+  componentWillUnmount(){}
 
-  showCreateUser = () => {
+  showCreateUser=()=>{
     this.setState({
-      showCreateUser: true
-    });
-  };
+      showCreateUser:true
+    })
+  }
 
-  routeToHome = () => {
-    let activeUser = localStorage.getItem("activeUser");
-    if (activeUser !== null) {
-      api.readUser(activeUser).then(res => {
-        console.log(res.data[0]);
-        this.props.history.push({
-          pathname: `/home`,
-          state: { data: res.data[0] }
-        });
-      });
+  routeToHome=()=>{
+    let activeUser = localStorage.getItem('activeUser');
+    if(activeUser!==null){
+      api.readUser(activeUser)
+        .then(res=>{
+          console.log(res.data[0]);
+          this.props.history.push({
+            pathname: `/home`,
+            state: {data:res.data[0]}
+          })
+        })
     }
-  };
+  }
 
-  render() {
+
+  render(){
     this.routeToHome();
-    return (
+    return(
       <div className={this.state.classList}>
+
         {this.state.showCreateUser === false ? (
           <div className="welcome-home">
             <h1>Welcome to Tweeper!</h1>
@@ -58,7 +63,7 @@ class Home extends Component {
           <div />
         )}
 
-        {this.state.showCreateUser ? <CreateUser /> : <div />}
+
       </div>
     );
   }
