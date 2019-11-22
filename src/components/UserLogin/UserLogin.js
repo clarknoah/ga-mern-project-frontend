@@ -2,6 +2,7 @@ import Api from "../../Api.js";
 import React, { Component } from "react";
 import "./UserLogin.css";
 import { withRouter } from "react-router-dom";
+import Utils from "../../utilities.js";
 
 let api = new Api();
 
@@ -37,10 +38,10 @@ class UserLogin extends Component {
       .loginUser(this.state.handle, this.state.password)
       .then(res => {
         if (res.data[0] !== undefined) {
-          localStorage.setItem('activeUser', res.data[0].handle);
+          Utils.setActiveUser(res.data[0].handle);
           console.log(res.data[0]);
           this.goToProfile(res.data[0]);
-          this.setFollowing(res.data[0].following);
+          Utils.setFollowing(res.data[0].following)
           this.setState({
             loggedIn: true
           });
@@ -53,10 +54,6 @@ class UserLogin extends Component {
       });
   };
 
-  setFollowing=(following)=>{
-    localStorage.setItem("following",following);
-    console.log(localStorage.getItem('following'));
-  }
 
   unsetFollowing=()=>{
     localStorage.removeItem("following")
@@ -64,7 +61,7 @@ class UserLogin extends Component {
 
   logout = () => {
     localStorage.removeItem('activeUser');
-    this.unsetFollowing();
+    Utils.unsetFollowing();
     this.setState({
       loggedIn: false
     });
