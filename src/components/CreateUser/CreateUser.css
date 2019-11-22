@@ -12,6 +12,8 @@
   font-family: "Alata", sans-serif;
   letter-spacing: 1px;
   word-spacing: 5px;
+  font-size: 25px;
+  margin: 0 auto;
 }
 
 hr {
@@ -35,6 +37,7 @@ hr {
   font-family: "Alata";
   font-size: 100%;
   color: white;
+
   border-radius: 20px;
   justify-self: flex-end;
   text-shadow: 0.5px 0.5px black;
