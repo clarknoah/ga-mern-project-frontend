@@ -38,14 +38,10 @@ class UserLogin extends Component {
       .loginUser(this.state.handle, this.state.password)
       .then(res => {
         if (res.data[0] !== undefined) {
-<<<<<<< HEAD
-          localStorage.setItem("activeUser", res.data[0].handle);
-=======
           Utils.setActiveUser(res.data[0].handle);
->>>>>>> aa1a0b4aa8cfccaff976616cd276648a7f5eb6fa
           console.log(res.data[0]);
           this.goToProfile(res.data[0]);
-          Utils.setFollowing(res.data[0].following)
+          Utils.setFollowing(res.data[0].following);
           this.setState({
             loggedIn: true
           });
@@ -58,18 +54,13 @@ class UserLogin extends Component {
       });
   };
 
-
-  unsetFollowing=()=>{
-    localStorage.removeItem("following")
-  }
+  unsetFollowing = () => {
+    localStorage.removeItem("following");
+  };
 
   logout = () => {
-<<<<<<< HEAD
     localStorage.removeItem("activeUser");
-=======
-    localStorage.removeItem('activeUser');
     Utils.unsetFollowing();
->>>>>>> aa1a0b4aa8cfccaff976616cd276648a7f5eb6fa
     this.setState({
       loggedIn: false
     });
