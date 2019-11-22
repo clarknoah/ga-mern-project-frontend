@@ -42,12 +42,8 @@ class ProfileHome extends Component {
             <FollowingBox following={this.state.userInfo.following} />
           </div>
         </div>
-        <div className="TweepSteamContainer" >
+
           <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps} />
-        </div>
-
-
-
       </div>
     );
   }
