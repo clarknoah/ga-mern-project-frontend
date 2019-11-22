@@ -4,17 +4,21 @@
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  background-color: white;
-  border: solid grey 1px;
   width: 100%;
 }
 
 .FollowingUser {
   cursor: pointer;
   padding: 10px;
+  transition: ease 0.3s all;
 }
 
 .FollowingUser:hover {
   transform: scale(1.2);
+  color: #0a7aa6;
   text-shadow: 1px 1px 1px 1px 1px black;
+}
+
+.following-heading {
+  font-family: Alata, sans-serif;
 }

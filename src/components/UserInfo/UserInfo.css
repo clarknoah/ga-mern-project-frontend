@@ -1,15 +1,57 @@
 .UserInfo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   /* background-color: grey; */
   padding: 10px;
   font-family: Alata, sans-serif;
   width: 100%;
+  height: 300px;
 }
 
 .UserInfo h3,
 h5 {
   margin: 2px;
+}
+
+.follow-button {
+  border-radius: 100px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 15px;
+  background-color: #0a7aa6;
+  color: white;
+  font-weight: 700;
+  /* border: solid white 1px; */
+  margin: 0 20px;
+  transition: all ease 0.25s;
+  cursor: pointer;
+  align-self: center;
+
+}
+
+.follow-button:hover {
+  border: #0a7aa6 solid 1px;
+  background: white;
+  color: #0a7aa6;
+}
+
+.user-info-box {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.name-of-user{
+font-size: 20px;
+}
+
+.handle-of-user{
+
+}
+
+.description {
+  justify-self: flex-end;
 }

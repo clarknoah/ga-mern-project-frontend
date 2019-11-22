@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./UserInfo.css";
 import Api from "../../Api";
 
 const api = new Api();
 
 class UserInfo extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       classList: "UserInfo",
@@ -19,17 +19,17 @@ class UserInfo extends Component {
     }
   }
 
-  alreadyFollowing=(handle)=>{
+  alreadyFollowing = (handle) => {
     let following = localStorage.getItem('following');
-    if(following!==null){
+    if (following !== null) {
       return following.includes(handle);
     }
   }
 
-  followUser=()=>{
+  followUser = () => {
     console.log("Follow");
     api.followUser(this.state.handle)
-      .then(res=>{
+      .then(res => {
         let following = localStorage.getItem('following');
         following = following.split(',');
         following.push(this.state.handle);
@@ -40,14 +40,14 @@ class UserInfo extends Component {
       })
   }
 
-  unfollowUser=()=>{
+  unfollowUser = () => {
     console.log("UnFollow");
     api.unfollowUser(this.state.handle)
-      .then(req=>{
-      let following = localStorage.getItem('following');
-      following = following.split(',');
-      console.log(following);
-       let newfollow = following.filter(val=>val!==this.state.handle);
+      .then(req => {
+        let following = localStorage.getItem('following');
+        following = following.split(',');
+        console.log(following);
+        let newfollow = following.filter(val => val !== this.state.handle);
         localStorage.setItem('following', newfollow);
         this.setState({
           following: false
@@ -56,28 +56,36 @@ class UserInfo extends Component {
       )
   }
 
-  render(){
+  render() {
     let currentUser = this.state.activeUser === this.state.handle;
-    let follow = <button onClick={this.followUser}>Follow</button>;
-    let unfollow  = <button onClick={this.unfollowUser}>Unfollow</button>
+    let follow = <button className="follow-button" onClick={this.followUser}>Follow</button>;
+    let unfollow = <button className="follow-button" onClick={this.unfollowUser}>Unfollow</button>
     let display = this.alreadyFollowing(this.state.handle) ? unfollow : follow;
-    let reallyDisplay = currentUser ? <div/> : display;
+    let reallyDisplay = currentUser ? <div /> : display;
     return (
       <div className={this.state.classList}>
 
+        <div className="user-info-box">
+
+          <div className="handle-and-name">
+
+            <h3 className="name-of-user">
+              {this.state.firstName} {this.state.lastName}
+            </h3>
+
+            <h5 className="handle-of-user">@{this.state.handle}</h5>
+          </div>
+
+          <p className="description">{this.state.description}</p>
+
+        </div>
+
+
         {reallyDisplay}
-
-        <h3>
-          {this.state.firstName} {this.state.lastName}
-        </h3>
-
-        <h5>@{this.state.handle}</h5>
-
-        <p>{this.state.description}</p>
 
       </div>
     );
-}
+  }
 }
 
 

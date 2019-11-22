@@ -1,48 +1,48 @@
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import "./FollowingBox.css";
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Api from "../../Api.js";
 
 let api = new Api();
 
 
 class FollowingBox extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      classList:`FollowingBox`,
+      classList: `FollowingBox`,
       following: props.following
     }
   }
-  goToUser=(evt)=>{
+  goToUser = (evt) => {
     let handle = evt.target.getAttribute('handle');
     api.readUser(handle)
-      .then(result=>{
+      .then(result => {
         let data = result.data[0];
         console.log(this.props);
         let path = this.props.location.pathname;
         console.log(path);
-        if(path.includes('user')){
+        if (path.includes('user')) {
           this.props.updatePage(result.data[0]);
-        }else{
+        } else {
           this.props.history.push({
-            pathname:"/user/"+handle,
-            state:result.data[0]
+            pathname: "/user/" + handle,
+            state: result.data[0]
           })
         }
 
       })
   }
 
-  render(){
-    let following = this.state.following.map(val=>{
-        return <div key={val} onClick={this.goToUser} handle={val}
-        className={"FollowingUser"}>{val}</div>
+  render() {
+    let following = this.state.following.map(val => {
+      return <div key={val} onClick={this.goToUser} handle={val}
+        className={"FollowingUser"}>@{val}</div>
     })
-    return(
-      <div className={this.classList}>
-        <h4>Following:</h4>
+    return (
+      <div className={this.state.classList}>
+        <h4 className="following-heading">Following:</h4>
         {following}
       </div>
     );
