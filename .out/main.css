@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap);
 button {
     border-radius: 2px;
     padding: 10px 25px;
@@ -678,7 +679,7 @@ width:12em;
   font-size: 16px;
 } */
 
-.ReadComment {
+/* .ReadComment {
   border: 1px solid grey;
   display: flex;
   flex-direction: column;
@@ -689,8 +690,27 @@ width:12em;
   align-self: flex-end;
   width: 60%;
   background-color: whitesmoke;
+} */
+
+.ReadComment {
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 5px; */
+  padding: 5px;
+  align-self: flex-end;
+  width: 60%;
+  background-color: whitesmoke;
 }
 
+.delete-button-comment {
+  background: none;
+  align-self: flex-end;
+  border-style: none;
+  background-repeat: no-repeat;
+}
 .ReadTweep {
   display: flex;
   flex-direction: column;
@@ -701,8 +721,8 @@ width:12em;
   text-align: left;
   /* margin-right: 10px; */
   border-bottom: 4px solid #e1eef6f6;
-  padding: 10px 0 30px 0;
-  width: 100%;
+  padding: 10px auto 30px auto;
+  width: 80%;
 }
 
 .tweepHeader {
@@ -729,12 +749,32 @@ p {
   font-family: Arial, sans-serif;
   padding: 10px 5px;
   background-color: whitesmoke;
-  width: 90%;
+  width: 100%;
   border: 1px solid grey;
   margin: 10px 0;
   font-size: 15px;
+  height: 100%;
+  display: flex;
 }
 
+.tweep-delete-button {
+  background-image: url(static/media/trashcan.30916788.png);
+  width: 20px;
+  height: 20px;
+  background-position: center;
+}
+
+.delete-button {
+  background: none;
+  align-self: flex-end;
+  border-style: none;
+  background-repeat: no-repeat;
+}
+
+.tweep-delete-button:hover {
+  cursor: pointer;
+  background-image: url(static/media/trashcanhover.c9b9c950.png);
+}
 .CreateComment {
   display: flex;
   justify-content: flex-end;
@@ -753,11 +793,38 @@ p {
   align-self: center;
 }
 
-
 .SearchBox {
-
+  display: flex;
+  align-items: center;
 }
 
+.search-input {
+  height: 2rem;
+  width: 10rem;
+}
+
+.search-button {
+  border-radius: 100px;
+  height: 100%;
+  padding: 13px 16px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  border: solid white 1px;
+  margin: 0 20px;
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  cursor: pointer;
+  align-self: center;
+  font-family: Alata, sans-serif;
+  letter-spacing: 1px;
+}
+
+.search-button:hover {
+  background: #0a7aa6;
+  color: white;
+  border: solid white 1.5px;
+}
 .UserInfo {
   display: flex;
   flex-direction: column;
@@ -773,6 +840,8 @@ p {
 h5 {
   margin: 2px;
 }
+
+/* @import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
 
 :focus {
   outline: none;
@@ -804,8 +873,74 @@ h5 {
   height: 100%;
   font-family: Helvetica, Arial, sans-serif;
   padding: 15px;
-  background-color: white;
-  color: rgb(0, 0, 0);
+  background-color: #0a7aa6;
+  color: white;
+  font-weight: 700;
+  border: solid white 1px;
+  margin: 0 20px;
+  transition: all ease 0.25s;
+  cursor: pointer;
+  align-self: center;
+}
+
+.login-button:hover {
+  background: white;
+  color: black;
+  border: solid #0a7aa6 1.5px;
+}
+
+.login-button:hover {
+  background: white;
+  color: black;
+  border: solid #0a7aa6 1.5px;
+}
+
+.logged-in-as {
+  /* margin: 10px; */
+  /* font-weight: 500;
+  font-family: Alata, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .logged-in-as {
+    display: none;
+  }
+} */
+
+:focus {
+  outline: none;
+}
+
+.UserLogin {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.login-info-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.login-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  height: 75%;
+  padding: 5px;
+  font-family: "Alata", sans-serif;
+  font-size: 100%;
+  margin: 5px 0;
+}
+
+.login-button {
+  border-radius: 100px;
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 15px;
+  background-color: #0a7aa6;
+  color: white;
   font-weight: 700;
   border: solid white 1px;
   margin: 0 20px;
@@ -816,16 +951,21 @@ h5 {
 }
 
 .login-button:hover {
-  background: #0a7aa6;
-  color: white;
-  border: solid white 1.5px;
+  background: white;
+  color: black;
+  border: solid #0a7aa6 1.5px;
 }
 
 .logged-in-as {
-  margin: 10px;
+  /* margin: 10px; */
   font-weight: 500;
   font-family: Alata, sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+  .logged-in-as {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=main.css.map*/

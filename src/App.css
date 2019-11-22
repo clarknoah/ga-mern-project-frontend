@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  
+
   background-color: #0a7aa6;
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
@@ -261,4 +261,3 @@ textarea {
     display: none;
   }
 }
-
