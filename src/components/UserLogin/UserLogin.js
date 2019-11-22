@@ -10,7 +10,7 @@ class UserLogin extends Component {
     super(props);
     let activeUser = localStorage.getItem("activeUser");
     console.log(activeUser);
-    let userLoggedIn = activeUser!== null;
+    let userLoggedIn = activeUser !== null;
     this.state = {
       classList: "UserLogin",
       handle: "",
@@ -37,7 +37,7 @@ class UserLogin extends Component {
       .loginUser(this.state.handle, this.state.password)
       .then(res => {
         if (res.data[0] !== undefined) {
-          localStorage.setItem('activeUser', res.data[0].handle);
+          localStorage.setItem("activeUser", res.data[0].handle);
           console.log(res.data[0]);
           this.goToProfile(res.data[0]);
           this.setState({
@@ -53,7 +53,7 @@ class UserLogin extends Component {
   };
 
   logout = () => {
-    localStorage.removeItem('activeUser');
+    localStorage.removeItem("activeUser");
     this.setState({
       loggedIn: false
     });
@@ -76,7 +76,7 @@ class UserLogin extends Component {
   };
 
   render() {
-    let activeUser = localStorage.getItem('activeUser');
+    let activeUser = localStorage.getItem("activeUser");
     let notLoggedIn = (
       <div className="login-info-with-button">
         <div className="login-info">

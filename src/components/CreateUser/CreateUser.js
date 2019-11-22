@@ -45,8 +45,8 @@ class CreateUser extends Component {
       console.log(res.data);
       this.props.history.push({
         pathname: `/home`,
-        state: {data:res.data}
-      })
+        state: { data: res.data }
+      });
     });
   };
 
@@ -64,6 +64,7 @@ class CreateUser extends Component {
                 onChange={this.updateValue}
                 value={this.state.firstName}
                 placeholder="First Name"
+                className="input"
               ></input>
             </label>
             <label>
@@ -73,6 +74,7 @@ class CreateUser extends Component {
                 onChange={this.updateValue}
                 value={this.state.lastName}
                 placeholder="Last Name"
+                className="input"
               ></input>
             </label>
           </div>
@@ -84,6 +86,7 @@ class CreateUser extends Component {
               value={this.state.handle}
               placeholder="Handle"
               placeholder="Handle"
+              className="input"
             ></input>
           </label>
           <label>
@@ -94,6 +97,7 @@ class CreateUser extends Component {
               onChange={this.updateValue}
               value={this.state.password}
               placeholder="Password"
+              className="input"
             ></input>
           </label>
           <button onClick={this.submitUser} className="submit-user-button">
