@@ -74,13 +74,10 @@ class FollowingHome extends Component{
       <div className={this.state.classList}>
       <div id="UserInfoContainer" className={"UserInfoContainer"}>
         <UserInfo {...this.state.userInfo}/>
-      </div>
-      <div id="FollowingContainer" className={"FollowingContainer"}>
         <FollowingBox updatePage={this.updateUserState} following={this.state.userInfo.following}/>
       </div>
-      <div id="TweepStreamContainer" className={"TweepStreamContainer"}>
         <TweepStream user={this.state.userInfo} tweeps={this.state.tweeps}/>
-      </div>
+
       </div>
     );
   }

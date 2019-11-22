@@ -35,10 +35,8 @@ function App() {
               </Link>
             </h1>
           </div>
-          <div className="header-right">
-            {searchBox}
-            <UserLogin />
-          </div>
+          {searchBox}
+          <UserLogin />
         </div>
       </header>
       <section>

@@ -122,17 +122,13 @@ class ReadTweep extends Component {
             @{this.state.user.handle} | {`${this.state.tweep.timestamp} `}
           </h6>
         </div>
-        <div className="tweep-content">
-          <p>{this.state.tweep.tweepContent}</p>
+        <p className="tweep-content">{this.state.tweep.tweepContent}</p>
 
-          {this.state.author ? (
-            <button className="delete-button" onClick={this.deleteTweep}>
-              <div className="tweep-delete-button"></div>
-            </button>
-          ) : (
-            <div />
-          )}
-        </div>
+        {this.state.author ? (
+          <button onClick={this.deleteTweep}>Delete</button>
+        ) : (
+          <div />
+        )}
 
         {comments}
         <CreateComment
