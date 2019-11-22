@@ -43,6 +43,9 @@ A Twitter like clone application with the ability to read, create, delete and up
 ### Initial Design Layout
 <img width="780" alt="tweeper-mock" src="https://media.git.generalassemb.ly/user/22371/files/01cee900-09fb-11ea-9ca7-cad5e8dbe0ae">
 
+![TweepStream](/planning/Tweetstream.png)
+
+
 ## Features
 - Users can create "Tweeper" accounts
 - Users can login into their individual accounts

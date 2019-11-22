@@ -4,7 +4,7 @@ class Api {
   constructor(){
     let path = window.location.href;
     if(path.includes("netlify")){
-      this.root = "https://tweeper-backend.herokuapp.com/"
+      this.root = "https://tweeper-backend.herokuapp.com"
     }else if(path.includes("localhost")){
       this.root = "http://localhost:5555";
     }
