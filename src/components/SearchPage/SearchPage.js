@@ -65,26 +65,26 @@ class SearchPage extends Component {
     })
     let tweeps = this.state.tweeps.map((val, key) => {
       return (
-        <div className={"CaretResult"}>
+        <div className={"CaretResult FlexRow"}>
           <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
-          <div> | </div>
+  
           <div>{val.tweepContent}</div>
         </div>)
     })
 
     let caretTags = this.state.caretTags.map((val, key) => {
       return (
-        <div className={"CaretResult"} >
+        <div className={"CaretResult FlexRow"} >
           <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>.{val.authorHandle}</div>
-          <div> | </div>
+
           <div className="users">{val.tweepContent}</div>
         </div >)
     })
     let userTags = this.state.userTags.map((val, key) => {
       return (
-        <div className={"UserTags"}>
+        <div className={"UserTags FlexRow"}>
           <div className={"UserLink"} name={val.authorHandle} onClick={this.goToUserPage}>{val.authorHandle}</div>
-          <div>|</div>
+
           <div>{val.tweepContent}</div>
         </div>)
     })
@@ -100,6 +100,7 @@ class SearchPage extends Component {
         </div>
         <div className={"TweepResults"}>
           <h4 className="results-title">Tweeps</h4>
+          {tweeps}
         </div>
         <div className={"CaretResults"}>
           <h4 className="results-title">CaretTags</h4>
