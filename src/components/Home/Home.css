@@ -1,14 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Alata|Quicksand&display=swap");
 
 .Home {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  border: 2px solid rgb(222, 223, 228);
-  font-family: Alata, sans-serif;
-  font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+
 }
