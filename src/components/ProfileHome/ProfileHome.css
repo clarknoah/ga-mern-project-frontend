@@ -4,12 +4,15 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
 }
 
 .profile-left-side {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .FollowingContainer {
@@ -17,7 +20,6 @@
 }
 
 .TweepStreamContainer {
-  border: 1px solid grey;
   height: 100%;
   box-sizing: border-box;
   overflow: scroll;
